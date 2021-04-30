@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-
+<!-- MOVER ESTILOS A UN DOCUMENTO APARTE -->
 <style>
-#botonEnviar{display: none;}
+
 #iconoGog{
     width: 348.525px;
     height: 78px;
@@ -24,12 +24,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script>
-                       function captchaDev(){
-                            $("#botonEnviar").css("display" , "block");                    
-
-                        };
-                        </script>
+    <script src="funciones\funciones.js">    </script>
 </head>
 
 <body class="bg-warning">
@@ -42,7 +37,7 @@
                 <div class="h4 text-gray-900 mb-4">{{ __('Iniciar sesión') }}</div>
                 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" id="formularioInicio" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -75,8 +70,24 @@
                         </div>
                         
                        
-                            <div id="divCap" class="g-recaptcha"  data-callback="captchaDev" data-sitekey="6LdCfroaAAAAAGVOFiA-DlvAa6ZUxlOIvCPpWgSm">
+                            <div id="divCap" class="g-recaptcha"  data-callback="googleOk" data-sitekey="6LdCfroaAAAAAGVOFiA-DlvAa6ZUxlOIvCPpWgSm">
                             </div>
+
+
+                            <script>
+                                /**
+                                 * Funcion para habilitar el boton.
+                                 */
+                               
+                                    function googleOk() {
+                                        $('#botonEnviar').prop('disabled', false);
+                                    }
+                                
+
+                            </script>
+
+
+
                             <br/>
                             <div id="botonGoogle">
                             <img id="iconoGog" src="\imagenes\google-icon.svg">
@@ -95,7 +106,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" id="botonEnviar" class="btn btn-primary">
+                                <button id="botonEnviar" class="btn btn-primary">
                                     {{ __('Iniciar sesión') }}
                                 </button>
 
