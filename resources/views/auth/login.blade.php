@@ -11,6 +11,7 @@
     margin-bottom: 1em;
 }
 </style>
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,13 +23,12 @@
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
     <meta name="msapplication-tap-highlight" content="no">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="funciones\funciones.js">    </script>
 </head>
 
 <body class="bg-warning">
-<div class="container" style="background-image: url('/imgINSCDM/inscamidemar.jpg');" >
+<div class="container" style="background-image: url('/imgINSCDM/inscamidemar.jpg');" > <!-- IMAGANES FUERA DEL HTML-->
     <div class="row justify-content-center">
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="text-center">
