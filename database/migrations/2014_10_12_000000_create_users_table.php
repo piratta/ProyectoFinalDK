@@ -24,8 +24,8 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->SoftDeletes();//para hibernar  y no borrar 100%
             $table->boolean('admin')->default(0);
-            $table->bigInteger('update_by')->unsigned();
-            $table->bigInteger('created_by')->unsigned();
+            $table->bigInteger('update_by')->default(1)->unsigned();
+            $table->bigInteger('created_by')->default(1)->unsigned();
 
             $table->foreign('update_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
