@@ -56,41 +56,26 @@ $(document).ready(function() {
         
             <tr>
                 <th>ID</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Data modificació</th>
-                <th>Usuari que ha modificat</th>
-                <th>administrador</th>
+                <th>Categoria</th>
+                <th>creat </th>
+               
                 <th>Acción</th>
            </tr>
         </thead>
         <tbody>
 
-        @foreach ($queryUsuario as $datos)    
+        @foreach ($categ as $cats)    
                   
 
             <tr>
-                <td id='<?=  $datos -> id  ?>'>{{ $datos -> id}}</td>
-                <td>{{ $datos -> name}}</td>
-                <td>{{ $datos -> email }}</td>  
-                <td>{{ $datos -> updated_at }}</td>  
-                <td>{{ $datos -> updated_by }}</td>  
+                <td id='{{  $cats -> id}}'>{{ $cats -> id}}</td>
+                <td>{{ $cats -> Categoria}}</td>
+                <td>{{ $cats -> created_at }}</td>  
+                
 
-                <th> 
-                    <div class="margin-l-15 checkbox checkboxStyle-table checkColorGreenLight">
-                    @if ($datos ->  admin == 1)
-                        <input type="checkbox" class="tableid" name="tableid" id="tableid" class="click" checked>
-                        <label class="s18 text-normal"></label>
-                    
-                    @else
-                        <input type="checkbox" class="tableid" name="tableid" id="tableid" class="click">
-                        <label class="s18 text-normal"></label>
-                    
-                    @endif
-                     </div>
-                </th>
+               
                 <td>
-                <form method="post" action="borrar"><input value="<?=  $datos -> id  ?>" Type="hidden" name="id" id="'<?=  $datos -> id  ?>'"/>
+                <form method="post" action="borrar"><input value="<?=  $cats -> id  ?>" Type="hidden" name="id" id="'<?=  $cats -> id  ?>'"/>
                 @csrf
                 <button id="borrar">
                                

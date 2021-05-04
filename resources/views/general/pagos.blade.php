@@ -1,6 +1,6 @@
-@extends('layouts.app')
-
 @section('content')
+@extends('layouts.menu')
+@extends('layouts.app')
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" media="screen" />
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

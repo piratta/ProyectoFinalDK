@@ -38,51 +38,37 @@
                     <div class="app-sidebar__inner">
                         <ul class="vertical-nav-menu">
                             <li class="app-sidebar__heading">Menu </li>
+
+                            <?php 
+                                 $cont = 1;
+                            ?>
+
+                            @foreach($categ as $categorias)
                             <li>
-                                 <a href="#">ESO</a>
+                           
+                                 <a href="#" id="{{$categorias->id}}">{{$categorias->Categoria}}</a>
                                 <ul>
                                
                                    
                                     @foreach ($pagas as $paga)
-                                        @if($paga->nivel=="ESO" && $paga->estat=="actiu")
-
-                                              <li><a href="pagos" id= '{{$paga->id}}' class="nav-link">{{$paga->comanda}}</a></li>
-                                         @endif
-                                    @endforeach
-                                
                                     
+                                        @if($paga->estat=="actiu" && $paga->id_categoria==$cont)
+
+                                              <li><a href="{{$paga->id}}" id= '{{$paga->id}}' class="nav-link">{{$paga->comanda}}</a></li>
+                                         @endif
+
+                                     
+                                    @endforeach
+                                    <?php 
+                                   $cont++;
+                                   ?>
+                                   
+                                  
                                     
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#">
-                                    BATXILLERAT
-                                </a>
-                                <ul>
-                                @foreach ($pagas as $paga)
-                                        @if($paga->nivel=="BAT" && $paga->estat=="actiu")
-
-                                              <li><a href="pagos" id= '{{$paga->id}}' class="nav-link">{{$paga->comanda}}</a></li>
-                                         @endif
-                                    @endforeach
-                                </ul>                       
-                            </li>
-                            <li>
-                                <a href="#">
-                                    CICLES FORMATIUS
-                                </a>
-                                <ul>
-                                @foreach ($pagas as $paga)
-                                        @if($paga->nivel=="CF" && $paga->estat=="actiu")
-
-                                              <li><a href="/pagos/{{$paga->id}}" id= '{{$paga->id}}' class="nav-link">{{$paga->comanda}}</a></li>
-
-
-                                         @endif
-                                    @endforeach
-                                </ul>
-
-                            </li>
+                            @endforeach
+                                        
                             @if (Auth::user())
                             @if(Auth::user() -> admin == 1)
                             <li>

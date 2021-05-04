@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\categorias;
 use App\pagos;
+use App\User;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -30,10 +31,14 @@ class AppServiceProvider extends ServiceProvider
     {       
         $nCat = categorias::all();
         $nPag = pagos::all();
+        $Usuarios = user::all();
         
-        
+        $query = "select p.id_categoria , p.titol from pagos p join categorias c ON c.id= p.id_categoria";
+
         View::share('pagas', $nPag);
-        View::share('cursos', $nCat);
+        View::share('categ', $nCat);
+        View::share('datos', $Usuarios);
+
 
     }
 }

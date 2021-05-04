@@ -26,7 +26,7 @@ class adminController extends Controller
             
 
         return view('administracion/admin');
-        }else return view('/home');
+        }else return view('/login');
 
 
     }

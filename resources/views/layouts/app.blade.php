@@ -74,27 +74,7 @@ use Illuminate\Support\Facades\View;
                                             class="p-0 btn">
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                         </a>
-                                        <div tabindex="-1" role="menu" aria-hidden="true"
-                                            class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-													 document.getElementById('logout-form').submit();">
-                                                {{ __('Tanca sesió') }}
-                                            </a>
-                                            <!-- LISTA DE OPCION USUARIOS-->
-                                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-													 document.getElementById('logout-form').submit();">
-                                                {{ __('Gestionar Cuenta') }}
-                                            </a>
-                                    
-                                           
-                                            <!--FIN LISTA-->
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                class="d-none">
-                                                @csrf
-                                            </form>
-
-                                        </div>
+                                        @include('layouts.menuadmin')
                                     </div>
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">
