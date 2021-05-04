@@ -42,7 +42,7 @@
                                  <a href="#">ESO</a>
                                 <ul>
                                     @foreach ($cursos as $curso)
-                                        <li><a href="pagos" id= '{{$curso->id }}' class="nav-link">{{$curso->Categoria}}</a></li>
+                                        <li><a href="pagos" id= '{{$pagos->id }}' class="nav-link">@if ($if{{$curso->Categoria}}</a></li>
                                     @endforeach
                                     
                                 </ul>
