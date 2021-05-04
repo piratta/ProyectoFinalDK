@@ -29,11 +29,10 @@ h2{text-align: center;}</style>
 <table id="tablaDatos" class="display" style="width:100%">
         <thead>
             <tr>
-                <th>ID </th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Activo/inactivo</th>
-                <th>Acción</th>
+                <th>Usuari</th>
+                <th>Conta</th>
+                <th>Curs</th>
+                <th>Descripció</th>
            </tr>
         </thead>
         <tbody>

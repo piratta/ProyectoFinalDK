@@ -35,6 +35,10 @@ class DatabaseSeeder extends Seeder
         'update_by' => 1,
         'created_by' => 1]);
         
+        DB::table('cursos')->insert([
+            'curso' => 'FP',
+            'update_by' => 1,
+            'created_by' => 1]);
 
 
 
