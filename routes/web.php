@@ -20,7 +20,7 @@ Route::get('/admin', 'adminController@Index');
 route::get('/adminUsuarios', 'adminController@getUser');
 route::get('/adminPagos', 'adminController@getPay');
 route::get('/adminCategorias', 'adminController@getCategorias');
-route::get('/pagos', 'pagosControllers@pagos');
+route::get('/pagos/{id}', 'pagosControllers@pagos');
 route::get('/llogerTaquilles', 'pagosControllers@taquilla');
 route::get('/reciclaje', 'pagosControllers@reciclaje');
 route::get('/reciclajeAyuntamiento', 'pagosControllers@reciclajeAyuntamiento');

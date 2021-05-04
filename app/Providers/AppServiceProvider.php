@@ -31,8 +31,9 @@ class AppServiceProvider extends ServiceProvider
         $nCat = categorias::all();
         $nPag = pagos::all();
         
-        View::share('cursos', $nCat);
+        
         View::share('pagas', $nPag);
+        View::share('cursos', $nCat);
 
     }
 }

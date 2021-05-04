@@ -41,9 +41,16 @@
                             <li>
                                  <a href="#">ESO</a>
                                 <ul>
-                                    @foreach ($cursos as $curso)
-                                        <li><a href="pagos" id= '{{$pagos->id }}' class="nav-link">@if ($if{{$curso->Categoria}}</a></li>
+                               
+                                   
+                                    @foreach ($pagas as $paga)
+                                        @if($paga->nivel=="ESO" && $paga->estat=="actiu")
+
+                                              <li><a href="pagos" id= '{{$paga->id}}' class="nav-link">{{$paga->comanda}}</a></li>
+                                         @endif
                                     @endforeach
+                                
+                                    
                                     
                                 </ul>
                             </li>
@@ -52,9 +59,12 @@
                                     BATXILLERAT
                                 </a>
                                 <ul>
-                                    <li><a href="pagos" class="nav-link">PAGAMENT</a></li>
-                                    <li><a href="reciclaje" class="nav-link">Reciclatge llibres 4t d'ESO</a></li>
-                                    <li><a href="reciclajeAyuntamiento" class="nav-link">Reciclatge llibres Ajuntament</a></li>
+                                @foreach ($pagas as $paga)
+                                        @if($paga->nivel=="BAT" && $paga->estat=="actiu")
+
+                                              <li><a href="pagos" id= '{{$paga->id}}' class="nav-link">{{$paga->comanda}}</a></li>
+                                         @endif
+                                    @endforeach
                                 </ul>                       
                             </li>
                             <li>
@@ -62,9 +72,14 @@
                                     CICLES FORMATIUS
                                 </a>
                                 <ul>
-                                    <li><a href="pagos" class="nav-link">PAGAMENT</a></li>
-                                    <li><a href="reciclaje" class="nav-link">Reciclatge llibres 4t d'ESO</a></li>
-                                    <li><a href="reciclajeAyuntamiento" class="nav-link">Reciclatge llibres Ajuntament</a></li>
+                                @foreach ($pagas as $paga)
+                                        @if($paga->nivel=="CF" && $paga->estat=="actiu")
+
+                                              <li><a href="/pagos/{{$paga->id}}" id= '{{$paga->id}}' class="nav-link">{{$paga->comanda}}</a></li>
+
+
+                                         @endif
+                                    @endforeach
                                 </ul>
 
                             </li>
