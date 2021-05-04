@@ -1,5 +1,6 @@
 
 <div class="app-main">
+
             <div class="app-sidebar sidebar-shadow">
                 <div class="app-header__logo">
                     <div class="logo-src"></div>
@@ -40,7 +41,6 @@
                             <li>
                                  <a href="#">ESO</a>
                                 <ul>
-                              
                                     @foreach ($cursos as $curso)
                                         <li><a href="pagos" id= '{{$curso->id }}' class="nav-link">{{$curso->Categoria}}</a></li>
                                     @endforeach

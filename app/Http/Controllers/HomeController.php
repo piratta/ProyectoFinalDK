@@ -29,8 +29,7 @@ class HomeController extends Controller
      */
     public function index(){
         
-        $nCat = categorias::all();
 
-        return view('home', ['cursos' => $nCat]);
+        return view('home');
     }
 }

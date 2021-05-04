@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use App\categorias;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -24,8 +26,11 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
-        View::share('cursos', 'categorias::all()');
+    {       
+         $nCat = categorias::all();
+         
+
+        View::share('cursos', $nCat);
 
 
     }
