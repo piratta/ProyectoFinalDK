@@ -30,10 +30,9 @@ h2{text-align: center;}</style>
         <thead>
             <tr>
                 <th>ID </th>
-                <th>Nom</th>
-                <th>Cognom</th>
-                <th>administrador</th>
-              
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Activo/inactivo</th>
                 <th>Acción</th>
            </tr>
         </thead>
