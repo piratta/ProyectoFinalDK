@@ -131,10 +131,11 @@ class CreateUsersTable extends Migration
     {        
 
         Schema::dropIfExists('pagos');
-        Schema::dropIfExists('users');
         Schema::dropIfExists('cuentas');
         Schema::dropIfExists('cursos');
         Schema::dropIfExists('categorias');
+        Schema::dropIfExists('users');
+
         
 
 

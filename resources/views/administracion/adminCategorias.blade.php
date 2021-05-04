@@ -58,7 +58,9 @@ $(document).ready(function() {
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
-                <th>Activo/inactivo</th>
+                <th>Data modificació</th>
+                <th>Usuari que ha modificat</th>
+                <th>administrador</th>
                 <th>Acción</th>
            </tr>
         </thead>
@@ -71,6 +73,9 @@ $(document).ready(function() {
                 <td id='<?=  $datos -> id  ?>'>{{ $datos -> id}}</td>
                 <td>{{ $datos -> name}}</td>
                 <td>{{ $datos -> email }}</td>  
+                <td>{{ $datos -> updated_at }}</td>  
+                <td>{{ $datos -> updated_by }}</td>  
+
                 <th> 
                     <div class="margin-l-15 checkbox checkboxStyle-table checkColorGreenLight">
                     @if ($datos ->  admin == 1)

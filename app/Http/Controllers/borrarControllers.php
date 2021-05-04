@@ -13,12 +13,13 @@ class borrarControllers extends Controller
     public function borrarUsuarios(Request $request){
         $id=$request->id;
         $usuario = User::find($id);
-        $usuario->delete();
+       
         
-        $usuario_mod =  Auth::User()->name ;
+        $usuario_mod =  Auth::User()->id ;
             DB::table('users')
-                ->where('id', $usuario->id)
-                ->update(['update_by' => $usuario_mod]);
+            ->where([ 'id' => $id])
+               ->update(['update_by' => $usuario_mod]);
+               $usuario->delete();
 
     
 

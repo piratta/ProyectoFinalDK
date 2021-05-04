@@ -32,8 +32,11 @@ class adminController extends Controller
     }
 
     public function getUser(){
-        if(Auth::user()-> admin == 1 ){
-        return view('administracion.adminUsuarios');
+        if(Auth::user()-> admin == 1 ){ 
+
+            $users = user::all();      
+
+            return view('administracion.adminCategorias',['queryUsuario' => $users]);
     }else return view('/login');
     
     }
