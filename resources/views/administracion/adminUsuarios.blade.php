@@ -41,7 +41,7 @@ $(document).ready(function() {
     $('#tablaDatos').DataTable( {
         dom: 'Bfrtlip',
         buttons: [
-            'copy', 'csv', 'excel', 'pdf'
+            'copy', 'excel', 'pdf'
         ]
     } );
 
@@ -90,7 +90,7 @@ $(document).ready(function() {
                      </div>
                 </th>
                 <td>
-                <form method="post" action="borrar"><input value="<?=  $datos -> id  ?>" Type="hidden" name="id" id="'<?=  $datos -> id  ?>'"/>
+                <form method="post" action="borrarUser"><input value="<?=  $datos -> id  ?>" Type="hidden" name="id" id="'<?=  $datos -> id  ?>'"/>
                 @csrf
                 <button id="borrar">
                                

@@ -33,7 +33,6 @@ class AppServiceProvider extends ServiceProvider
         $nPag = pagos::all();
         $Usuarios = user::all();
         
-        $query = "select p.id_categoria , p.titol from pagos p join categorias c ON c.id= p.id_categoria";
 
         View::share('pagas', $nPag);
         View::share('categ', $nCat);

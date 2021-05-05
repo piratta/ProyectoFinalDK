@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use App\categorias;
+
 use Auth;
 use DB;
+
 
 class borrarControllers extends Controller
 {
@@ -34,4 +37,19 @@ class borrarControllers extends Controller
         return redirect('/adminUsuarios');
 
     }
+    public function borrarCat(Request $request){
+        $id=$request->id;
+        $cate = categorias::find($id);
+       
+        
+        $cate_mod =  Auth::User()->id ;
+            DB::table('categorias')
+            ->where([ 'id' => $id])
+               ->update(['update_by' => $cate_mod]);
+               $cate->delete();
+   
+        return redirect('/adminCategorias');
+
+    }
+    
 }

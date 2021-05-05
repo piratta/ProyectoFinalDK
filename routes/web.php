@@ -24,4 +24,6 @@ route::get('/pagos/{id}', 'pagosControllers@pagos');
 route::get('/llogerTaquilles', 'pagosControllers@taquilla');
 route::get('/reciclaje', 'pagosControllers@reciclaje');
 route::get('/reciclajeAyuntamiento', 'pagosControllers@reciclajeAyuntamiento');
-route::post('/borrar', 'borrarControllers@borrarUsuarios');
+route::post('/borrarUser', 'borrarControllers@borrarUsuarios');
+route::post('/borrarCat', 'borrarControllers@borrarCat');
+route::post('/afegirCat', 'afegir@addCategoria');

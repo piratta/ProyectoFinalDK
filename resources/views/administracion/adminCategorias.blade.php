@@ -4,20 +4,11 @@
 
 @section('content')
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" media="screen" />
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-<link href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css" rel="stylesheet"/>
-<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet"/>
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+
+
+
+
+
 <!-- mover a un css aparte-->
 <style>
 h2{text-align: center;}</style>
@@ -41,16 +32,25 @@ $(document).ready(function() {
     $('#tablaDatos').DataTable( {
         dom: 'Bfrtlip',
         buttons: [
-            'copy', 'csv', 'excel', 'pdf'
+            'copy', 'excel', 'pdf'
         ]
     } );
+   /* $("#modalBtnClick").on("click", function () {
+            console.log("hola");
+            $('#staticBackdrop').modal('hide');
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
+        });
+*/
+$("#staticBackdrop").prependTo("body");
+
 
    } );
 
+  
 </script>
 
 <a href="professorat">Professorat</a>-><a href="adminCategorias"><b>Categorias</b></a>
-
 <table id="tablaDatos" class="display" style="width:100%">
         <thead>
         
@@ -75,7 +75,7 @@ $(document).ready(function() {
 
                
                 <td>
-                <form method="post" action="borrar"><input value="<?=  $cats -> id  ?>" Type="hidden" name="id" id="'<?=  $cats -> id  ?>'"/>
+                <form method="post" action="borrarCat"><input value="<?=  $cats -> id  ?>" Type="hidden" name="id" id="'<?=  $cats -> id  ?>'"/>
                 @csrf
                 <button id="borrar">
                                
@@ -99,7 +99,8 @@ $(document).ready(function() {
             </tr>
 
 
-            @endforeach    
+            @endforeach  
+
             
             
 
@@ -107,6 +108,10 @@ $(document).ready(function() {
     </table>
  
 
+@include('administracion.insertarB')
+
+
 
 
 @endsection
+
