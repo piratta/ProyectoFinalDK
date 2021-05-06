@@ -21,7 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('country');
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestamp('create_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->SoftDeletes();//para hibernar  y no borrar 100%
             $table->boolean('admin')->default(0);
             $table->bigInteger('update_by')->default(1)->unsigned();
@@ -30,33 +31,23 @@ class CreateUsersTable extends Migration
             $table->foreign('update_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
-
-            
-
-
-
-
-
         });
-        Schema::create('categorias', function (Blueprint $table) {
+
+
+        Schema::create('categorias' , function (Blueprint $table) {
             $table->id();
             $table->string('Categoria', 150);
-            $table->timestamps();    
+            $table->timestamp('create_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->bigInteger('update_by')->unsigned();
             $table->bigInteger('created_by')->unsigned();
-
-            $table->SoftDeletes();//para hibernar  y no borrar 100%
+            $table->SoftDeletes();
             
             $table->foreign('update_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
-
-
-
-            
-
-            
         });
+
 
         Schema::create('cursos' , function (Blueprint $table) {
             $table->id();
@@ -70,6 +61,8 @@ class CreateUsersTable extends Migration
 
 
         });
+
+
 
         Schema::create('cuentas' , function (Blueprint $table) {
             $table->id();
@@ -86,6 +79,7 @@ class CreateUsersTable extends Migration
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
         });
+
         
 
         Schema::create('pagos', function (Blueprint $table) {
@@ -104,21 +98,19 @@ class CreateUsersTable extends Migration
             $table->enum("estat" ,['actiu' , 'inactiu']) ->default('inactiu');
             $table->bigInteger('created_by')->unsigned();
             $table->bigInteger('update_by')->unsigned();
+            $table->timestamp('create_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->SoftDeletes();//para hibernar  y no borrar 100%
-            $table->timestamps();
+            
 
             $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('update_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('id_cuenta')->references('id')->on('cuentas')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_cuenta')->references('id')->on('cuentas')->onDelete('set null');
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('set null');
 
         });
-
-
-        
-        
 
     }
 

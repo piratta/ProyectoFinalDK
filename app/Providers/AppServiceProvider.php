@@ -6,6 +6,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\categorias;
+use DB;
 use App\pagos;
 use App\User;
 
@@ -29,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {       
+        if (! $this->app->runningInConsole()) {
         $nCat = categorias::all();
         $nPag = pagos::all();
         $Usuarios = user::all();
@@ -37,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
         View::share('pagas', $nPag);
         View::share('categ', $nCat);
         View::share('datos', $Usuarios);
+        }
 
 
     }
