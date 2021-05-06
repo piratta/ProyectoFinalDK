@@ -85,8 +85,8 @@ class CreateUsersTable extends Migration
         Schema::create('pagos', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('id_usuario')->unsigned();
-            $table->bigInteger('id_categoria')->unsigned(); 
-            $table->bigInteger('id_cuenta')->unsigned();
+            $table->bigInteger('id_categoria')->unsigned()->nullable(); 
+            $table->bigInteger('id_cuenta')->unsigned()->nullable();
             $table->bigInteger('id_curso')->unsigned();
             $table->enum('nivel', ['ESO','BAT','CF','PR']);
             $table->string('comanda', 20);
@@ -106,9 +106,10 @@ class CreateUsersTable extends Migration
             $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('update_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('id_cuenta')->references('id')->on('cuentas')->onDelete('set null');
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('set null');
+            $table->foreign('id_cuenta')->references('id')->on('cuentas')->onDelete('set null');
+
 
         });
 
