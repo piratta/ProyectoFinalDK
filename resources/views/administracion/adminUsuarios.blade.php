@@ -20,9 +20,9 @@
 <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
 <!-- mover a un css aparte-->
 <style>
-h2{text-align: center;}</style>
+h2{text-align: center;}
+</style>
 
-</script>
 
 
 <!--
@@ -38,6 +38,8 @@ h2{text-align: center;}</style>
       *
       */
 $(document).ready(function() {
+    $("#staticBackdrop").prependTo("body");
+
     $('#tablaDatos').DataTable( {
         dom: 'Bfrtlip',
         buttons: [
@@ -46,10 +48,12 @@ $(document).ready(function() {
     } );
 
    } );
+   $("#staticBackdrop").prependTo("body");
+
 
 </script>
 
-<a href="professorat">Professorat</a>-><a href="adminCategorias"><b>Categorias</b></a>
+<a href="/admin">administació</a>-><a href="adminUsuarios"><b>Usuaris</b></a>
 
 <table id="tablaDatos" class="display" style="width:100%">
         <thead>
@@ -77,14 +81,14 @@ $(document).ready(function() {
                 <td>{{ $datos -> updated_by }}</td>  
 
                 <th> 
-                    <div class="margin-l-15 checkbox checkboxStyle-table checkColorGreenLight">
+                    <div  class="margin-l-15 checkbox checkboxStyle-table checkColorGreenLight">
                     @if ($datos ->  admin == 1)
-                        <input type="checkbox" class="tableid" name="tableid" id="tableid" class="click" checked>
-                        <label class="s18 text-normal"></label>
+                        <input type="hidden" class="tableid" name="tableid" id="tableid" class="click" checked disabled>
+                        <label class="s18 text-normal">Si</label>
                     
                     @else
-                        <input type="checkbox" class="tableid" name="tableid" id="tableid" class="click">
-                        <label class="s18 text-normal"></label>
+                        <input type="hidden" class="tableid" name="tableid" id="tableid" class="click" disabled>
+                        <label class="s18 text-normal">No</label>
                     
                     @endif
                      </div>
@@ -117,10 +121,12 @@ $(document).ready(function() {
             @endforeach    
             
             
+            
 
         </tfoot>
     </table>
- 
+    @include('administracion.insertarU')
+
 
 
 

@@ -29,7 +29,7 @@ h2{text-align: center;}</style>
     panel de administración donde se gestionarán los usuarios.
     Creación con la función DataTable(), la tabla dinamica.
  -->
-   <h2>Panel de administración</h2>
+   <h2>Panel de administració</h2>
    
       <script>
       /*
@@ -41,7 +41,7 @@ $(document).ready(function() {
     $('#tablaDatos').DataTable( {
         dom: 'Bfrtlip',
         buttons: [
-            'copy', 'csv', 'excel', 'pdf'
+            'copy', 'excel', 'pdf'
         ]
     } );
 
@@ -49,14 +49,13 @@ $(document).ready(function() {
 
 </script>
 
-<a href="professorat">Professorat</a>-><a href="adminCategorias"><b>Categorias</b></a>
+<a href="/admin">Administació</a>-><a href="adminPagos"><b>Pagaments</b></a>
 
 <table id="tablaDatos" class="display" style="width:100%">
         <thead>
         
             <tr>
             <th>ID</th>
-                <th>id_usuario</th>
                 <th>Nivel</th>
                 <th>Titol</th>
                 <th>Descripció</th>
@@ -71,8 +70,6 @@ $(document).ready(function() {
 
             <tr>    
                 <td id='<?=  $pago -> id  ?>'>{{ $pago -> id}}</td>
-                <td>{{ $pago -> id_usuario}}</td>
-
                 <td>{{ $pago->nivel }}</td>  
                 <td>{{ $pago -> titol }}</td>  
                 <td>{{ $pago -> descipcio }}</td>  

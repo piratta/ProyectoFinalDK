@@ -20,23 +20,23 @@ class DatabaseSeeder extends Seeder
             'created_by' => 1
         ])  ;
 
-        DB::table('cursos')->insert([
-            'curso' => 'ESO',
+        DB::table('categorias')->insert([
+            'Categoria' => 'ESO',
             'update_by' => 1,
             'created_by' => 1]);
                      
-        DB::table('cursos')->insert( [
-        'curso' => 'PROF',
+        DB::table('categorias')->insert( [
+        'Categoria' => 'PROFESORAT',
         'update_by' => 1,
         'created_by' => 1]); 
 
-        DB::table('cursos')->insert([
-        'curso' => 'BAT',
+        DB::table('categorias')->insert([
+        'Categoria' => 'BATXILLERAT',
         'update_by' => 1,
         'created_by' => 1]);
         
-        DB::table('cursos')->insert([
-            'curso' => 'FP',
+        DB::table('categorias')->insert([
+            'Categoria' => 'CICLES FORMATIUS',
             'update_by' => 1,
             'created_by' => 1]);
 

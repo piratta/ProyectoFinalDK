@@ -27,3 +27,4 @@ route::get('/reciclajeAyuntamiento', 'pagosControllers@reciclajeAyuntamiento');
 route::post('/borrarUser', 'borrarControllers@borrarUsuarios');
 route::post('/borrarCat', 'borrarControllers@borrarCat');
 route::post('/afegirCat', 'afegir@addCategoria');
+route::post('/afegirUser', 'afegir@addUser');

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\categorias;
+use App\User;
 use DB;
 use Auth;
 
@@ -26,6 +27,26 @@ class afegir extends Controller
         $categoria->save();
        
         return redirect('adminCategorias');
+
+    }
+
+
+    public function addUser(Request $request){
+
+        $usuari = new User();
+    
+
+        $usuari->name=$request->nUser;
+        $usuari->email=$request->cUser;
+        $usuari->password=$request->cPw;
+        $usuari->admin=$request->cAdmin;
+        $usuari->update_by=Auth::User()->id;
+        $usuari->created_by=Auth::User()->id;
+
+
+        $usuari->save();
+       
+        return redirect('adminUsuarios');
 
     }
     

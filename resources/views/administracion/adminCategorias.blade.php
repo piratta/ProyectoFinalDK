@@ -50,7 +50,7 @@ $("#staticBackdrop").prependTo("body");
   
 </script>
 
-<a href="professorat">Professorat</a>-><a href="adminCategorias"><b>Categorias</b></a>
+<a href="/admin">Administació</a>-><a href="adminCategorias"><b>Categorias</b></a>
 <table id="tablaDatos" class="display" style="width:100%">
         <thead>
         
@@ -58,7 +58,6 @@ $("#staticBackdrop").prependTo("body");
                 <th>ID</th>
                 <th>Categoria</th>
                 <th>creat </th>
-               
                 <th>Acción</th>
            </tr>
         </thead>

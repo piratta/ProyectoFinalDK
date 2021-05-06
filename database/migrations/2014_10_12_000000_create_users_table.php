@@ -18,10 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('country');
+            $table->string('password')->nullable();
+            $table->string('country')->default('Espanya');
             $table->rememberToken();
-            $table->timestamp('create_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->SoftDeletes();//para hibernar  y no borrar 100%
             $table->boolean('admin')->default(0);
@@ -37,7 +37,7 @@ class CreateUsersTable extends Migration
         Schema::create('categorias' , function (Blueprint $table) {
             $table->id();
             $table->string('Categoria', 150);
-            $table->timestamp('create_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->bigInteger('update_by')->unsigned();
             $table->bigInteger('created_by')->unsigned();
@@ -98,7 +98,7 @@ class CreateUsersTable extends Migration
             $table->enum("estat" ,['actiu' , 'inactiu']) ->default('inactiu');
             $table->bigInteger('created_by')->unsigned();
             $table->bigInteger('update_by')->unsigned();
-            $table->timestamp('create_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->SoftDeletes();//para hibernar  y no borrar 100%
             
