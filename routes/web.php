@@ -28,3 +28,4 @@ route::post('/borrarUser', 'borrarControllers@borrarUsuarios');
 route::post('/borrarCat', 'borrarControllers@borrarCat');
 route::post('/afegirCat', 'afegir@addCategoria');
 route::post('/afegirUser', 'afegir@addUser');
+route::post('/editarUser', 'edit@editUser');

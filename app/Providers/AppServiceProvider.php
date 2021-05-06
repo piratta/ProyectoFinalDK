@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
         $nPag = pagos::all();
         $Usuarios = user::all();
         
-
+        
         View::share('pagas', $nPag);
         View::share('categ', $nCat);
         View::share('datos', $Usuarios);
