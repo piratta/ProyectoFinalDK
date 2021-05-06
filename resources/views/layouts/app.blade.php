@@ -40,7 +40,7 @@ use Illuminate\Support\Facades\View;
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow bg-warning  text-white">
-        <img id="logo" src="imgINSCDM/logo.png">
+        <img id="logo" src="/imgINSCDM/logo.png">
     
         <div class="app-header__logo" >
             <div class="header__pane">
