@@ -19,6 +19,7 @@ return array(
     'App\\Http\\Controllers\\adminController' => $baseDir . '/app/Http/Controllers/adminController.php',
     'App\\Http\\Controllers\\afegir' => $baseDir . '/app/Http/Controllers/afegir.php',
     'App\\Http\\Controllers\\borrarControllers' => $baseDir . '/app/Http/Controllers/borrarControllers.php',
+    'App\\Http\\Controllers\\edit' => $baseDir . '/app/Http/Controllers/edit.php',
     'App\\Http\\Controllers\\pagosControllers' => $baseDir . '/app/Http/Controllers/pagosControllers.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',

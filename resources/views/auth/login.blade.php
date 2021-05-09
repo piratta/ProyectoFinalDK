@@ -10,6 +10,13 @@
     height: 78px;
     margin-bottom: 1em;
 }
+.text-center {
+        text-align: center;
+    }
+
+    .g-recaptcha {
+        display: inline-block;
+    }
 </style>
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
@@ -90,9 +97,13 @@
 
 
                             <br/>
+            
                             <div id="botonGoogle">
-                            <img id="iconoGog" src="\imagenes\google-icon.svg">
-
+                          
+                            <a href="{{ url('auth/google') }}" style="margin-top: 20px;">
+                                 <img id="iconoGog" src="\imagenes\google-icon.svg" alt="Iniciar sesión con Google">
+                            
+                            </a> 
                                 <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">

@@ -29,3 +29,7 @@ route::post('/borrarCat', 'borrarControllers@borrarCat');
 route::post('/afegirCat', 'afegir@addCategoria');
 route::post('/afegirUser', 'afegir@addUser');
 route::post('/editarUser', 'edit@editUser');
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle');
+Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallback');

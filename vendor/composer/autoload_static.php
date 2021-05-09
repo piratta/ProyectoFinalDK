@@ -516,6 +516,7 @@ class ComposerStaticInit8ba8b5f66417e093a3ad367cf366f9fd
         'App\\Http\\Controllers\\adminController' => __DIR__ . '/../..' . '/app/Http/Controllers/adminController.php',
         'App\\Http\\Controllers\\afegir' => __DIR__ . '/../..' . '/app/Http/Controllers/afegir.php',
         'App\\Http\\Controllers\\borrarControllers' => __DIR__ . '/../..' . '/app/Http/Controllers/borrarControllers.php',
+        'App\\Http\\Controllers\\edit' => __DIR__ . '/../..' . '/app/Http/Controllers/edit.php',
         'App\\Http\\Controllers\\pagosControllers' => __DIR__ . '/../..' . '/app/Http/Controllers/pagosControllers.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',

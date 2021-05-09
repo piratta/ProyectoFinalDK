@@ -29,5 +29,12 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    
+    'google' => [
+        'client_id' => '506115751402-dht8qfkg5v356l70299ql97tpo68mok3.apps.googleusercontent.com',
+        'client_secret' => 'E713Y0P0KyvPmvGi4QJyPcw3',
+        'redirect' => 'http://proyectofinaldk.com/auth/google/callback',
+    ],
+
 
 ];
