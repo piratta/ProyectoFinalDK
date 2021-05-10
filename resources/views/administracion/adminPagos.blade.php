@@ -44,6 +44,8 @@ $(document).ready(function() {
             'copy', 'excel', 'pdf'
         ]
     } );
+    $("#staticBackdrop").prependTo("body");
+
 
    } );
 
@@ -55,12 +57,15 @@ $(document).ready(function() {
         <thead>
         
             <tr>
-            <th>ID</th>
-                <th>Nivel</th>
+                <th>ID</th>
+                <th>Categoria</th>
                 <th>Titol</th>
                 <th>Descripció</th>
                 <th>Data inici</th>
                 <th>Data final</th>
+                <th>Preu</th>
+                <td>Accio</td>  
+
            </tr>
         </thead>
         <tbody>
@@ -73,11 +78,16 @@ $(document).ready(function() {
                 <td>{{ $pago->nivel }}</td>  
                 <td>{{ $pago -> titol }}</td>  
                 <td>{{ $pago -> descipcio }}</td>  
+                <td>{{ $pago -> data_inici }}</td>  
+                <td>{{ $pago -> data_fi }}</td>  
+                <td>{{ $pago -> preu }}</td>  
+
+
 
                 <td>
-                <form method="post" action="borrar"><input value="<?=  $pago -> id  ?>" Type="hidden" name="id" id="'<?=  $pago -> id  ?>'"/>
+                <form method="post" action="borrarPago"><input value="<?=  $pago -> id  ?>" Type="hidden" name="id" id="'<?=  $pago -> id  ?>'"/>
                 @csrf
-                <button id="borrar">
+                <button class="borrar">
                                
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -107,7 +117,7 @@ $(document).ready(function() {
         </tfoot>
     </table>
  
-
+    @include('administracion.insertarP')
 
 
 @endsection

@@ -87,15 +87,15 @@ class CreateUsersTable extends Migration
             $table->bigInteger('id_usuario')->unsigned();
             $table->bigInteger('id_categoria')->unsigned()->nullable(); 
             $table->bigInteger('id_cuenta')->unsigned()->nullable();
-            $table->bigInteger('id_curso')->unsigned();
-            $table->enum('nivel', ['ESO','BAT','CF','PR']);
-            $table->string('comanda', 20);
+            //$table->bigInteger('id_curso')->unsigned();
+            $table->string('nivel', 150);
+           // $table->string('comanda', 20);
             $table->string('titol', 150);
             $table->string('descipcio', 150);
             $table->float('preu', 6,2);
             $table->date('data_inici');
             $table->date('data_fi');
-            $table->enum("estat" ,['actiu' , 'inactiu']) ->default('inactiu');
+            $table->enum("estat" ,['actiu' , 'inactiu']) ->default('actiu');
             $table->bigInteger('created_by')->unsigned();
             $table->bigInteger('update_by')->unsigned();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
@@ -103,7 +103,7 @@ class CreateUsersTable extends Migration
             $table->SoftDeletes();//para hibernar  y no borrar 100%
             
 
-            $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('cascade')->onUpdate('cascade');
+           // $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('update_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

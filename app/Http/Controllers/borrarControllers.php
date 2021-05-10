@@ -9,6 +9,7 @@ use App\categorias;
 
 use Auth;
 use DB;
+use App\pagos;
 
 
 class borrarControllers extends Controller
@@ -37,6 +38,7 @@ class borrarControllers extends Controller
         return redirect('/adminUsuarios');
 
     }
+
     public function borrarCat(Request $request){
         $id=$request->id;
         $cate = categorias::find($id);
@@ -49,6 +51,20 @@ class borrarControllers extends Controller
                $cate->delete();
    
         return redirect('/adminCategorias');
+
+    }
+    public function borrarPagament(Request $request){
+        $id=$request->id;
+        $pag = pagos::find($id);
+       
+        
+        $pagos_mod =  Auth::User()->id ;
+            DB::table('pagos')
+            ->where([ 'id' => $id])
+               ->update(['update_by' => $pagos_mod]);
+               $pag->delete();
+   
+        return redirect('/adminPagos');
 
     }
     

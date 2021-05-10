@@ -3,25 +3,25 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Insertar Categoria</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Modificar Categoria</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
      
-        <form method="post" action="editarUser">
+        <form method="post" action="modificarCat">
         @csrf 
         {{ method_field('POST') }}
 
        Categoria<br>
-        <input Type="text" name="cate" class="cate" id="cate" value=""></input><br>
+        <input Type="text" name="modCate" class="modCate" id="modCate" value=""></input><br>
        
         
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">tornar</button>
-        <button type="submit" class="btn btn-primary" >Afegir</button>
+        <button type="submit" class="btn btn-primary" >Modificar</button>
         </form>
       </div>
     </div>

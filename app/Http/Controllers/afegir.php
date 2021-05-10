@@ -9,6 +9,7 @@ use App\categorias;
 use App\User;
 use DB;
 use Auth;
+use App\pagos;
 
 
 
@@ -47,6 +48,32 @@ class afegir extends Controller
         $usuari->save();
        
         return redirect('adminUsuarios');
+
+    }
+    public function addPagos(Request $request){
+
+       
+        $pagos = new pagos();
+    
+       
+        $pagos->nivel=$request->nCategoria;
+
+        $pagos->titol=$request->nTitol;
+        $pagos->descipcio=$request->nDescrp;
+        $pagos->preu=$request->nPreu;
+
+        $pagos->update_by=Auth::User()->id;
+        $pagos->created_by=Auth::User()->id;
+        $pagos->id_usuario=Auth::User()->id;
+
+        $pagos->id_categoria=$request->nCategoria;
+
+
+        $pagos->data_inici=$request->nInici;
+        $pagos->data_fi=$request->nFi;
+        $pagos->save();
+       
+        return redirect('adminPagos');
 
     }
     

@@ -54,7 +54,7 @@
                                     
                                         @if($paga->estat=="actiu" && $paga->id_categoria==$cont)
 
-                                              <li><a href="{{$paga->id}}" id= '{{$paga->id}}' class="nav-link">{{$paga->comanda}}</a></li>
+                                              <li><a href="{{$paga->id}}" id= '{{$paga->id}}' class="nav-link">{{$paga->titol}}</a></li>
                                          @endif
 
                                      
