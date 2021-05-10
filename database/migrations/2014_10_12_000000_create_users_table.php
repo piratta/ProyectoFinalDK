@@ -71,6 +71,8 @@ class CreateUsersTable extends Migration
             $table->string('clave' , 50);
             $table->bigInteger('update_by')->unsigned();
             $table->bigInteger('created_by')->unsigned();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
             $table->SoftDeletes();//para hibernar  y no borrar 100%
 

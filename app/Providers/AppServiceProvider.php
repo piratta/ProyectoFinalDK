@@ -9,6 +9,7 @@ use App\categorias;
 use DB;
 use App\pagos;
 use App\User;
+use App\cuentas;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -31,11 +32,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {       
         if (! $this->app->runningInConsole()) {
+        $nAcc = cuentas::all();
         $nCat = categorias::all();
         $nPag = pagos::all();
         $Usuarios = user::all();
         
-        
+        View::share('cuentas', $nAcc);
         View::share('pagas', $nPag);
         View::share('categ', $nCat);
         View::share('datos', $Usuarios);

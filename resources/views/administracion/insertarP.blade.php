@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <button type="button" id="modalBtnClick" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-Afeg    ir pagament</button>
+Afegir pagament</button>
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="0" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -27,15 +27,27 @@ Afeg    ir pagament</button>
         </select>
         <br>
         Titol<br>
-        <input Type="text" name="nTitol" id="nTitol" placeholder="Titol del pagament"></input><br>
+        <input Type="text" name="nTitol" id="nTitol" placeholder="Titol del pagament" required></input><br>
         Descripció<br>
-        <input Type="text" name="nDescrp" id="nDescrp" placeholder="Descripció"></input><br>
+        <input Type="text" name="nDescrp" id="nDescrp" placeholder="Descripció" required></input><br>
         Preu<br>
-        <input Type="number" name="nPreu" id="nPreu" placeholder="Preu"></input><br>     
+        <input Type="number" name="nPreu" id="nPreu" placeholder="Preu" required></input><br> 
+        Numero de conta<br>
+
+        <select  name="nCuenta">
+
+        @foreach ($cuentas as $cuenta)
+
+        <option id="{{ $cuenta->id }}"  value="{{ $cuenta->id }}">{{$cuenta->cuenta}}</option>
+
+
+        @endforeach
+        </select> <br>
+
         Data inici:
-        <input name="nInici" type="date"/>
+        <input name="nInici" type="date" required/>
         Data fi:
-        <input name="nFi" type="date"/>
+        <input name="nFi" type="date" required/>
            
            
         

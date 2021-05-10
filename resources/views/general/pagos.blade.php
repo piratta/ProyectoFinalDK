@@ -11,16 +11,16 @@ font-size: 1em;}
 </style>
 
 <div id="contingut" class="p-3 px-5">
-   <h1 class="text-center">PAGAMENT DESPESES ESCOLARS CURS 2020-21</h2>
+   <h1 class="text-center">{{ $finRuta->titol }}</h2>
 
        <h3 background-color:="" open="" style="margin: 0px; padding: 0px 0px 5px; font-size: 14px; color: rgb(87, 78, 60);">
       <span style="color: rgb(64, 52, 146); font-size: 13.3333px;">Benvolgudes famílies,</span></h3>
    <h3 background-color:="" open="" style="margin: 0px; padding: 0px 0px 5px; font-size: 14px; color: rgb(87, 78, 60);">
       &nbsp;</h3>
    <p background-color:="" font-size:="" open="" style="font-size: 12px; margin-top: 0px; line-height: 20px; color: rgb(64, 52, 146);">
-      Amb la finalitat de facilitar-vos el pagament, en concepte de despeses escolars per al curs 2020-2021, hem habilitat aquest dispositiu.</p>
+   {{$finRuta-> descipcio}}</p>
    <p background-color:="" font-size:="" open="" style="font-size: 12px; margin-top: 0px; line-height: 20px; color: rgb(64, 52, 146);">
-      IMPORT: 50 €</p>
+      IMPORT: {{$finRuta->preu}}€</p>
    <p background-color:="" font-size:="" open="" style="font-size: 12px; margin-top: 0px; line-height: 20px; color: rgb(64, 52, 146);">
       <b style="color: rgb(34, 34, 34); font-size: small; font-family: arial, helvetica, sans-serif;">Heu d'enviar el comprovant bancari mitjançant l'adreça electrònica del centre (<font color="#0000ff"><u><a href="mailto:e3007257@xtec.cat" style="color: rgb(66, 133, 244); text-decoration-line: none;" target="_blank">e3007257@xtec.cat</a></u></font>), juntament&nbsp;amb la resta de documentació&nbsp;requerida per a formalitzar la matrícula del proper curs. MOLT IMPORTANT: Anoteu el nom i cognoms de l'alumne/a a l'apartat&nbsp;<i>assumpte&nbsp;</i>del correu electrònic.</b></p>
    <p background-color:="" font-size:="" open="" style="font-size: 12px; margin-top: 0px; line-height: 20px; color: rgb(64, 52, 146);">

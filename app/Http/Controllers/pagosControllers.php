@@ -5,25 +5,22 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use app\User;
+use App\User;
+use App\pagos;
+use App\cuentas;
+
 
 class pagosControllers extends Controller
 {
-    public function pagos()
+    public function pagos(request $request)
     {
-        return view('general/pagos');
-    }
-    public function taquilla()
-    {
-        return view('general/llogerTaquilles');
-    }
-    public function reciclaje()
-    {
-        return view('general/reciclaje');
+        //$query1 = select titol from pagos where id=$ruta;
+        $ruta = $request->id;
+        
+        $finRuta = pagos::find($ruta);
+        
+
+        return view('general/pagos', compact('finRuta'));
     }
     
-    public function reciclajeAyuntamiento()
-    {
-        return view('general/reciclajeAyuntamiento');
-    }
 }

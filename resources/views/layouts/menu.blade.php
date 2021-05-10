@@ -54,7 +54,7 @@
                                     
                                         @if($paga->estat=="actiu" && $paga->id_categoria==$cont)
 
-                                              <li><a href="{{$paga->id}}" id= '{{$paga->id}}' class="nav-link">{{$paga->titol}}</a></li>
+                                              <li><a href="/pagos/{{$paga->id}}" id= '{{$paga->id}}' class="nav-link">{{$paga->titol}}</a></li>
                                          @endif
 
                                      
@@ -75,9 +75,11 @@
                                 <a href="/admin">
                                     ADMINISTACIÓ
                                 </a>
-                                <ul> <a href="adminUsuarios">Usuarios</a></ul>
-                                <ul> <a href="adminPagos">Pagos</a></ul>
-                                <ul> <a href="adminCategorias">Categorias</a></ul>
+                                <ul> <a href="{{route('adminUsuarios')}}">Usuarios</a></ul>
+                                <ul> <a href="{{route('adminPagos')}}">Pagos</a></ul>
+                                <ul> <a href="{{route('adminCategorias')}}">Categorias</a></ul>
+                                <ul> <a href="{{route('adminCuenta')}}">Contes</a></ul>
+
                             </li>@endif     
                             @endif 
                         </ul>

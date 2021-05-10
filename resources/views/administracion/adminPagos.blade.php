@@ -64,6 +64,7 @@ $(document).ready(function() {
                 <th>Data inici</th>
                 <th>Data final</th>
                 <th>Preu</th>
+                <th>estat</th>
                 <td>Accio</td>  
 
            </tr>
@@ -81,6 +82,8 @@ $(document).ready(function() {
                 <td>{{ $pago -> data_inici }}</td>  
                 <td>{{ $pago -> data_fi }}</td>  
                 <td>{{ $pago -> preu }}</td>  
+                <td>{{ $pago -> estat }}</td>  
+
 
 
 

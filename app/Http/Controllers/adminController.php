@@ -48,13 +48,21 @@ class adminController extends Controller
     }else return view('/login');
 
     }
+    
+    public function getAcc(){
+        if(Auth::user()-> admin == 1 ){
+
+        return view('administracion.adminCuenta');
+    }else return view('/login');
+
+    }
+
+
 
     public function getCategorias(){
         if(Auth::user()-> admin == 1 ){ 
 
             $users = user::all();      
-
-            
                
         return view('administracion.adminCategorias',['queryUsuario' => $users]);
         

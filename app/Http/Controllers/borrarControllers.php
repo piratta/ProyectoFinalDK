@@ -53,6 +53,8 @@ class borrarControllers extends Controller
         return redirect('/adminCategorias');
 
     }
+
+    
     public function borrarPagament(Request $request){
         $id=$request->id;
         $pag = pagos::find($id);

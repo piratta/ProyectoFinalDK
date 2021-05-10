@@ -39,6 +39,13 @@ font-size: 1em;}
                </div>
          </div>
       </div>
+      <div class="col-lg-4 mb-4 container-fluid">
+         <div class="card bg-secondary text-white shadow">
+               <div class="card-body">
+               <a href="/adminAcc" class="text-white">Administració de contes</a>
+               </div>
+         </div>
+      </div>
    </div>
 
 @endsection

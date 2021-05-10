@@ -15,11 +15,13 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/professorat_update', 'ProfController@update');
-Route::get('/admin', 'adminController@Index');
-route::get('/adminUsuarios', 'adminController@getUser');
-route::get('/adminPagos', 'adminController@getPay');
-route::get('/adminCategorias', 'adminController@getCategorias');
+Route::get('/admin', 'adminController@Index')->name('admin');
+route::get('/adminUsuarios', 'adminController@getUser')->name('adminUsuarios');
+route::get('/adminPagos', 'adminController@getPay')->name('adminPagos');
+route::get('/adminCategorias', 'adminController@getCategorias')->name('adminCategorias');
+route::get('/adminCuenta', 'adminController@getAcc')->name('adminCuenta');;
+
+
 route::get('/pagos/{id}', 'pagosControllers@pagos');
 route::get('/llogerTaquilles', 'pagosControllers@taquilla');
 route::get('/reciclaje', 'pagosControllers@reciclaje');
@@ -28,6 +30,7 @@ route::post('/borrarPago', 'borrarControllers@borrarPagament');
 route::post('/borrarUser', 'borrarControllers@borrarUsuarios');
 route::post('/borrarCat', 'borrarControllers@borrarCat');
 route::post('/afegirCat', 'afegir@addCategoria');
+route::post('/afegirConta', 'afegir@addConta');
 route::post('/afegirPagament' , 'afegir@addPagos');
 route::post('/afegirUser', 'afegir@addUser');
 route::post('/editarUser', 'edit@editUser');

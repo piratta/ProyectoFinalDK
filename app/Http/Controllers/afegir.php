@@ -10,7 +10,7 @@ use App\User;
 use DB;
 use Auth;
 use App\pagos;
-
+use App\cuentas;
 
 
 class afegir extends Controller
@@ -66,14 +66,30 @@ class afegir extends Controller
         $pagos->created_by=Auth::User()->id;
         $pagos->id_usuario=Auth::User()->id;
 
-        $pagos->id_categoria=$request->nCategoria;
+        $pagos->id_cuenta=$request->nCuenta;
 
+        $pagos->id_categoria=$request->nCategoria;
+       
 
         $pagos->data_inici=$request->nInici;
         $pagos->data_fi=$request->nFi;
         $pagos->save();
-       
         return redirect('adminPagos');
+
+    }
+    public function addConta(Request $request){
+
+        $cuentas = new cuentas();
+    
+
+        $cuentas->cuenta=$request->nCuenta;
+        $cuentas->fuc=$request->fuc;
+        $cuentas->created_by=Auth::User()->id;
+
+
+        $cuentas->save();
+       
+        return redirect('adminCuenta');
 
     }
     
