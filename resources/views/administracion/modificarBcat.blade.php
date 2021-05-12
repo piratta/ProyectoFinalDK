@@ -15,7 +15,7 @@
         {{ method_field('POST') }}
 
        Categoria<br>
-        <input Type="text" name="modCate" class="modCate" id="modCate" value=""></input><br>
+        <input Type="text" name="modCate" class="modCate" id="modCate" value="" required></input><br>
        
         
       </div>

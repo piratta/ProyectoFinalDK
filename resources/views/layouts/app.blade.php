@@ -34,6 +34,13 @@ use Illuminate\Support\Facades\View;
     <link href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css" rel="stylesheet"/>
 <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" media="screen" />
+<style>
+@media only screen and (min-width: 800px){
+    .media{
+        display:none;
+    }
+}
+</style>
 
 </head>
 
@@ -66,18 +73,51 @@ use Illuminate\Support\Facades\View;
             </div>
             <div class="app-header__menu">
                 <span>
-                    <button type="button"
-                        class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                    <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                    
                         <span class="btn-icon-wrapper">
                             <i class="fa fa-ellipsis-v fa-w-6"></i>
                         </span>
                     </button>
                 </span>
             </div>
-            <div class="app-header__content">
-                <div class="app-header-left">
-                                   </div>
+            <div class="app-header__content" >
+                <div class="app-header-left "  >
+                <div class="media">
+                @if(Auth::User())
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                            {{ __('Tanca sesió') }}
+                        </a>
+                        @if(Auth::user()-> admin == 1 )
+                        <a class="dropdown-item" href="/admin">
+                            {{ __('Gestion') }}
+                        </a>
+                        @endif
+                        
+                        
+                             
+                     <!--LISTA DE OPCION USUARIOS-->
+                        
+                        @else<a class="dropdown-item" href="{{ route('login') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                            {{ __('Inicia sesió') }}
+                        </a>
+                        @endif
+
+                
+                        
+                     <!--   FIN LISTA -->
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                            class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+               
+
+                </div>
                 <div class="app-header-right">
+                
                     <div class="header-btn-lg pr-0">
                         <div class="widget-content p-0">
                             <div class="widget-content-wrapper">
@@ -112,6 +152,11 @@ use Illuminate\Support\Facades\View;
                 </div>
             </div>
         </div>
+        
+        <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/notifications.js') }}"></script>
+        <script type="text/javascript" src="https://kit.fontawesome.com/b79e6d3749.js" crossorigin="anonymous"></script>
+        
         <footer class="footer mt-auto footer-light">
                     <div class="container-fluid">
                         <div class="row">
@@ -128,9 +173,6 @@ use Illuminate\Support\Facades\View;
                         </div>
                     </div>
                 </footer>
-        <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/notifications.js') }}"></script>
-        <script type="text/javascript" src="https://kit.fontawesome.com/b79e6d3749.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

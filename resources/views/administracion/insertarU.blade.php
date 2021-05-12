@@ -19,11 +19,11 @@ Afegir usuari</button>
         {{ method_field('POST') }}
 
         Nom del usuari<br>
-        <input Type="text" name="nUser" id="nUser" placeholder="Nom Usuari"></input><br>
+        <input Type="text" name="nUser" id="nUser" placeholder="Nom Usuari" required></input><br>
         Correo electronic<br>
-        <input Type="text" name="cUser" id="cUser" placeholder="Correo electronic"></input><br>
+        <input Type="text" name="cUser" id="cUser" placeholder="Correo electronic" required></input><br>
         Contraseña per defecte<br>
-        <input Type="text" name="cPw" id="cPw" placeholder="Contrasenya"></input><br>
+        <input Type="text" name="cPw" id="cPw" placeholder="Contrasenya" required></input><br>
         administrador?<br>
         <input type="hidden" name="cAdmin" value="0" />
         <input Type="checkbox" name="cAdmin" id="cAdmin" value='1'></input><br>

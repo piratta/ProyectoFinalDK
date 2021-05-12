@@ -1,5 +1,4 @@
-<div tabindex="-1" role="menu" aria-hidden="true"
-                                            class="dropdown-menu dropdown-menu-right">
+<div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                                             @if(Auth::User())
                                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
 													 document.getElementById('logout-form').submit();">
