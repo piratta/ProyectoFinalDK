@@ -32,6 +32,7 @@ font-size: 1em;}
                </div>
          </div>
       </div>
+      
       <div class="col-lg-3 mb-4 container-fluid">
          <div class="card bg-secondary text-white shadow">
                <div class="card-body">

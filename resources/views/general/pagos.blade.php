@@ -17,8 +17,10 @@ font-size: 1em;}
       <span style="color: rgb(64, 52, 146); font-size: 13.3333px;">Benvolgudes famílies,</span></h3>
    <h3 background-color:="" open="" style="margin: 0px; padding: 0px 0px 5px; font-size: 14px; color: rgb(87, 78, 60);">
       &nbsp;</h3>
-   <p background-color:="" font-size:="" open="" style="font-size: 12px; margin-top: 0px; line-height: 20px; color: rgb(64, 52, 146);">
-   {{$finRuta-> descipcio}}</p>
+   <pre background-color:="" font-size:="" open="" style="font-size: 12px; margin-top: 0px; line-height: 20px; color: rgb(64, 52, 146);">
+  {!! $finRuta-> descipcio !!}
+   </pre>
+   
    <p background-color:="" font-size:="" open="" style="font-size: 12px; margin-top: 0px; line-height: 20px; color: rgb(64, 52, 146);">
       IMPORT: {{$finRuta->preu}}€</p>
    <p background-color:="" font-size:="" open="" style="font-size: 12px; margin-top: 0px; line-height: 20px; color: rgb(64, 52, 146);">

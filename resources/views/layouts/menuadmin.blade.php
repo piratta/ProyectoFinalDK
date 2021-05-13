@@ -4,11 +4,11 @@
 													 document.getElementById('logout-form').submit();">
                                                 {{ __('Tanca sesió') }}
                                             </a>
-                                            @if(Auth::user()-> admin == 1 )
+                                            
                                             <a class="dropdown-item" href="/admin">
                                                 {{ __('Gestion') }}
                                             </a>
-                                            @endif
+                                            
                                           
                                             
                                             <!-- LISTA DE OPCION USUARIOS-->

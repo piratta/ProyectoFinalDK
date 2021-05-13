@@ -77,13 +77,14 @@ class afegir extends Controller
         return redirect('adminPagos');
 
     }
+
     public function addConta(Request $request){
 
         $cuentas = new cuentas();
     
-
-        $cuentas->cuenta=$request->nCuenta;
+        $cuentas->cuenta=$request->nConta;
         $cuentas->fuc=$request->fuc;
+        $cuentas->update_by=Auth::User()->id;
         $cuentas->created_by=Auth::User()->id;
 
 

@@ -25,6 +25,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->SoftDeletes();//para hibernar  y no borrar 100%
             $table->boolean('admin')->default(0);
+
+
             $table->bigInteger('update_by')->unsigned()->nullable();;
             $table->bigInteger('created_by')->unsigned()->nullable();;
 
@@ -49,26 +51,15 @@ class CreateUsersTable extends Migration
         });
 
 
-        Schema::create('cursos' , function (Blueprint $table) {
-            $table->id();
-            $table->string('curso', 50);
-            $table->bigInteger('update_by')->unsigned();
-            $table->bigInteger('created_by')->unsigned();
-            $table->SoftDeletes();//para hibernar  y no borrar 100%
-
-            $table->foreign('update_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-
-
-        });
+       
 
 
 
         Schema::create('cuentas' , function (Blueprint $table) {
             $table->id();
             $table->string('cuenta' , 150);
-            $table->string('fuc' , 150);
-            $table->string('clave' , 50);
+            $table->string('fuc' , 150)->nullable();
+            $table->string('clave' , 50)->nullable();
             $table->bigInteger('update_by')->unsigned();
             $table->bigInteger('created_by')->unsigned();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

@@ -21,7 +21,7 @@ Afegir Conta</button>
         Numero de conta<br>
         <input Type="text" name="nConta" id="nConta" placeholder="Numero de conta" required></input><br>
         FUC<br>
-        <input Type="text" name="FUC" id="FUC" placeholder="FUC" required></input><br>
+        <input Type="text" name="fuc" id="fuc" placeholder="fuc" required></input><br>
         
            
         

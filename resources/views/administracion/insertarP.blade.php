@@ -29,9 +29,16 @@ Afegir pagament</button>
         Titol<br>
         <input Type="text" name="nTitol" id="nTitol" placeholder="Titol del pagament" required></input><br>
         Descripció<br>
-        <input Type="text" name="nDescrp" id="nDescrp" placeholder="Descripció" required></input><br>
+        <textarea class="nDescrp" name="nDescrp" id="nDescrp"></textarea>
+<script>
+    tinymce.init({
+        selector:'textarea.nDescrp',
+        width: 470,
+        height: 300
+    });
+</script>
         Preu<br>
-        <input Type="number" name="nPreu" id="nPreu" placeholder="Preu" required></input><br> 
+        <input Type="number" name="nPreu" id="nPreu" placeholder="Preu" required min="0"></input><br> 
         Numero de conta<br>
 
         <select  name="nCuenta">

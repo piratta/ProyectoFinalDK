@@ -70,17 +70,19 @@
                             @endforeach
                                         
                             @if (Auth::user())
-                            @if(Auth::user() -> admin == 1)
                             <li>
                                 <a href="/admin">
                                     ADMINISTACIÓ
                                 </a>
+                              
                                 <ul> <a href="{{route('adminUsuarios')}}">Usuarios</a></ul>
+                               
                                 <ul> <a href="{{route('adminPagos')}}">Pagos</a></ul>
                                 <ul> <a href="{{route('adminCategorias')}}">Categorias</a></ul>
                                 <ul> <a href="{{route('adminCuenta')}}">Contes</a></ul>
 
-                            </li>@endif     
+                            </li>
+                               
                             @endif 
                         </ul>
                     </div>

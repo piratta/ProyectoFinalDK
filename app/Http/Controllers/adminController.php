@@ -24,49 +24,49 @@ class adminController extends Controller
     public function index()
     {
         if(Auth::user()-> admin == 1 ){
-            
+             
 
-        return view('administracion/admin');
+        return view('administracion/admin' );
         }else return view('/login');
 
 
     }
 
     public function getUser(){
-        if(Auth::user()-> admin == 1 ){ 
+        if(Auth::user()-> admin == 1){ 
 
             $users = user::all();      
 
             return view('administracion.adminUsuarios',['queryUsuario' => $users]);
-    }else return view('/login');
+    }else return view('home');
     
     }
 
     public function getPay(){
-        if(Auth::user()-> admin == 1 ){
+        if(Auth::user()){
         return view('administracion.adminPagos');
-    }else return view('/login');
+    }else return view('home');
 
     }
     
     public function getAcc(){
-        if(Auth::user()-> admin == 1 ){
+        if(Auth::user()){
 
         return view('administracion.adminCuenta');
-    }else return view('/login');
+    }else return view('home');
 
     }
 
 
 
     public function getCategorias(){
-        if(Auth::user()-> admin == 1 ){ 
+        if(Auth::user() ){ 
 
             $users = user::all();      
                
         return view('administracion.adminCategorias',['queryUsuario' => $users]);
         
-        }else return view('/login');
+        }else return view('home');
     }
 
 
