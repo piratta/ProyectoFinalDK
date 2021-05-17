@@ -59,11 +59,9 @@ $(document).ready(function() {
         <thead>
         
             <tr>
-                <th>ID</th>
+                
                 <th>Nombre</th>
                 <th>Correo electronico</th>
-                <th>Data modificació</th>
-                <th>Usuari que ha modificat</th>
                 <th>administrador</th>
                 <th>Acció</th>
 
@@ -76,11 +74,10 @@ $(document).ready(function() {
                   
 
             <tr>
-                <td id='<?=  $datos -> id  ?>'>{{ $datos -> id}}</td>
+               
                 <td>{{ $datos -> name}}</td>
                 <td>{{ $datos -> email }}</td>  
-                <td>{{ $datos -> updated_at }}</td>  
-                <td>{{ $datos -> updated_by }}</td>  
+                
 
                 <th> 
                     <div  class="margin-l-15 checkbox checkboxStyle-table checkColorGreenLight">
@@ -132,9 +129,10 @@ $(document).ready(function() {
         </tfoot>
     </table>
     @if(Auth::user() -> admin == 1)
-    
-    @else
-        @include('administracion.insertarU')
+
+    @include('administracion.insertarU')
+
+  
 
    @endif
 

@@ -1,9 +1,4 @@
-<? php
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\View;
-
-?>
-<!doctype html>
+<!doctype HTML>
 <html lang="en">
 
 <head>
@@ -138,11 +133,11 @@ use Illuminate\Support\Facades\View;
                                         @if (Auth::user())
                                             {{Auth::user()->name}}
                                         @else
-                                            Not logged in user
+                                            No has iniciat sesió
                                         @endif
                                 </div>
                                     <div class="widget-subheading">
-                                        Usuario
+                                        
                                     </div>
                                 </div>
                                 <div class="widget-content-right header-user-info ml-3">
@@ -154,27 +149,14 @@ use Illuminate\Support\Facades\View;
                 </div>
             </div>
         </div>
+          
+        
         
         <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/notifications.js') }}"></script>
         <script type="text/javascript" src="https://kit.fontawesome.com/b79e6d3749.js" crossorigin="anonymous"></script>
         
-        <footer class="footer mt-auto footer-light">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6 small">Copyright © INSCAMI DE MAR 2021</div>
-                            <div class="col-md-6 text-md-right small">
-                                <a href="#!">Privacy Policy</a>
-                                ·
-                                <a href="#!">Terms &amp; Conditions</a>
-                                <a class="btn btn-info fab fa-twitter" href="http://twitter.com/home?status=https://pagaments.inscamidemar.cat/pagament/ESO/210">Twitter</a>
-                                <a class="btn btn-primary fab fa-facebook-f" href="http://facebook.com/sharer.php?u=https://pagaments.inscamidemar.cat/pagament/ESO/210"> Facebook</a>
-                                <a class="btn btn-success fab fa-whatsapp" href="https://api.whatsapp.com/send?text=Mira los pagos activos de https://pagaments.inscamidemar.cat/pagament/ESO/210"> WhatsApp</a>
-                                <a class="btn btn-primary fab fa-telegram-plane" href="tg:msg_url?url=https://pagaments.inscamidemar.cat/pagament/ESO/210&amp;text=Pagaments de l'Ins Camí de Mar"> Telegram</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+      
 </body>
 
 </html>

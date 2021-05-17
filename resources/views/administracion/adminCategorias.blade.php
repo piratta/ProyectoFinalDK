@@ -38,7 +38,9 @@ $(document).ready(function() {
             $("#modCate").attr('value', $valor);
  
 });
- 
+  /*
+  * Se mueve al fuera del body para que pueda ser funcional.
+  */
     $("#staticBackdrop").prependTo("body");
     $("#modify").prependTo("body");
    
@@ -54,9 +56,8 @@ $(document).ready(function() {
         <thead>
         
             <tr>
-                <th>ID</th>
+              
                 <th>Categoria</th>
-                <th>creat </th>
                 <th>Acció</th>
            </tr>
         </thead>
@@ -67,12 +68,8 @@ $(document).ready(function() {
        
 
             <tr>
-                <td id='{{  $cats -> id}}'>{{ $cats -> id}}</td>
-                <td class="categoria">{{ $cats -> Categoria}}</td>
-                <td>{{ $cats -> created_at }}</td>  
-                
-
                
+                <td class="categoria">{{ $cats -> Categoria}}</td>
                 <td>
                 <form method="post" action="borrarCat"><input value="<?=  $cats -> id  ?>" Type="hidden" name="id" id="'<?=  $cats -> id  ?>'"/>
                 @csrf
@@ -103,9 +100,6 @@ $(document).ready(function() {
            
 
             @endforeach  
-            
-
-            
             
 
         </tfoot>

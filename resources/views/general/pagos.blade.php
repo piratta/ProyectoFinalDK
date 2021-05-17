@@ -34,10 +34,20 @@ font-size: 1em;}
           <input type="hidden" name="Ds_Signature" value="b0pqVRH15AYyMlk/e9XKa21pNMtayYvwZTlrxkw880w=">
       </form>
       <br>
-           <a class="btn btn-twitter" href="http://twitter.com/home?status=https://pagaments.inscamidemar.cat/pagament/ESO/210">Twitter</a>
-         <a class="btn btn-facebook" href="http://facebook.com/sharer.php?u=https://pagaments.inscamidemar.cat/pagament/ESO/210">Facebook</a>
-         <a class="btn btn-whatsapp" href="https://api.whatsapp.com/send?text=Mira los pagos activos de https://pagaments.inscamidemar.cat/pagament/ESO/210">WhatsApp</a>
-         <a class="btn btn-telegram" href="tg:msg_url?url=https://pagaments.inscamidemar.cat/pagament/ESO/210&amp;text=Pagaments de l'Ins Camí de Mar">Telegram</a>
+      Compartir contingut: 
+      <a class="btn btn-social-icon btn-twitter">      
+            <a href="https://twitter.com/intent/tweet?text=Pagament%20{{$finRuta->titol}}:&url=http://proyectofinaldk.com/pagos/{{$finRuta->id}}">  <span class="fa fa-twitter">   </span>  </a>
+      </a>
+      <a class="btn btn-social-icon btn-facebook">      
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://proyectofinaldk.com/pagos/{{$finRuta->id}}">  <span class="fa fa-facebook">   </span>  </a>
+      </a>
+      <a class="btn btn-social-icon btn-telegram">      
+            <a href="https://t.me/share/url?url=http://proyectofinaldk.com/pagos/{{$finRuta->id}}&text=Pagament%20{{$finRuta->titol}}:">  <span class="fa fa-telegram">   </span>  </a>
+      </a>
+      <a class="btn btn-social-icon btn-twitter">      
+            <a href="https://api.whatsapp.com/send?text=Pagament%20{{$finRuta->titol}}:%20http://proyectofinaldk.com/pagos/{{$finRuta->id}}">  <span class="fa fa-whatsapp">   </span>  </a>
+      </a>
+         
        </div>
 
 @endsection

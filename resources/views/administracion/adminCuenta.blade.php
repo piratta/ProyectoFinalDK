@@ -54,7 +54,7 @@ $(document).ready(function() {
         <thead>
         
             <tr>
-                <th>ID</th>
+                
                 <th>Numero de conta</th>
                 <th>FUC </th>
                 <th>Acció</th>
@@ -67,7 +67,7 @@ $(document).ready(function() {
        
 
             <tr>
-                <td id='{{  $accs -> id}}'>{{ $accs -> id}}</td>
+               
                 <td class="categoria">{{ $accs -> cuenta}}</td>
                 <td>{{ $accs -> fuc }}</td>  
                 

@@ -57,7 +57,7 @@ $(document).ready(function() {
         <thead>
         
             <tr>
-                <th>ID</th>
+               
                 <th>Categoria</th>
                 <th>Titol</th>
                 <th>Descripció</th>
@@ -75,7 +75,6 @@ $(document).ready(function() {
                   
 
             <tr>    
-                <td id='<?=  $pago -> id  ?>'>{{ $pago -> id}}</td>
                 <td>{{ $pago->nivel }}</td>  
                 <td>{{ $pago -> titol }}</td>  
                 <td>{{ $pago -> descipcio }}</td>  
