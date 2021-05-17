@@ -34,7 +34,7 @@ route::post('/afegirConta', 'afegir@addConta');
 route::post('/afegirPagament' , 'afegir@addPagos');
 route::post('/afegirUser', 'afegir@addUser');
 route::post('/editarUser', 'edit@editUser');
-route::post('/modificarCat', 'modify@editCatg');
+route::post('/modifyCat', 'modify@modifyCat');
 
 
 Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle');
