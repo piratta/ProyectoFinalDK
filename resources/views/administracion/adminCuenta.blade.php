@@ -49,7 +49,7 @@ $(document).ready(function() {
   
 </script>
 
-<a href="/admin">Administació</a>-><a href="adminCategorias"><b>Categorias</b></a>
+<a href="/admin">Administació</a>-><a href="adminCuenta"><b>Contes</b></a>
 <table id="tablaDatos" class="display" style="width:100%">
         <thead>
         

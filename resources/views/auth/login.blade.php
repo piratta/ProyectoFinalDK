@@ -2,45 +2,33 @@
 <html lang="en">
 
 <head>
-<!-- MOVER ESTILOS A UN DOCUMENTO APARTE -->
-<style>
 
-#iconoGog{
-    width: 348.525px;
-    height: 78px;
-    margin-bottom: 1em;
-}
-.text-center {
-        text-align: center;
-    }
-
-    .g-recaptcha {
-        display: inline-block;
-    }
-</style>
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-
     <meta charset="utf-8">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>M7 UF4 MiniProjecte API</title>
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
     <meta name="msapplication-tap-highlight" content="no">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="funciones\funciones.js">    </script>
+    <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
+
 </head>
 
 <body class="bg-warning">
-<div class="container" style="background-image: url('/imgINSCDM/inscamidemar.jpg');" > <!-- IMAGANES FUERA DEL HTML-->
+<div class="container" >
+    
     <div class="row justify-content-center">
+
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="text-center">
-            <img id="logo" src="imgINSCDM/logo.png"></img>
+
+            <img id="logo" src="imgINSCDM/logo.png"/>
 
                 <div class="h4 text-gray-900 mb-4">{{ __('Iniciar sesión') }}</div>
                 

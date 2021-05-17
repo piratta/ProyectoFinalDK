@@ -7,14 +7,18 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" media="screen" />
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+
+
 <style>
+
 h2{text-align: center;
 font-size: 1em;}
 
 </style>
 
 
-   <h2>Panel de administración</h2>
+   <h2>Panel de administració</h2>
    <br>
 
    <div class="row " >
@@ -43,7 +47,7 @@ font-size: 1em;}
       <div class="col-lg-4 mb-4 container-fluid">
          <div class="card bg-secondary text-white shadow">
                <div class="card-body">
-               <a href="/adminAcc" class="text-white">Administració de contes</a>
+               <a href="/adminCuenta" class="text-white">Administració de contes</a>
                </div>
          </div>
       </div>

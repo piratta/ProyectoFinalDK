@@ -44,7 +44,9 @@
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow bg-warning  text-white">
-        <img id="logo" src="/imgINSCDM/logo.png">
+       
+        <a title="Ins Camí de mar" href="http://proyectofinaldk.com/">   <img id="logo" src="/imgINSCDM/logo.png" alt="Logo InsCamideMar" /></a>
+
     
         <div class="app-header__logo" >
             <div class="header__pane">
@@ -155,8 +157,22 @@
         <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/notifications.js') }}"></script>
         <script type="text/javascript" src="https://kit.fontawesome.com/b79e6d3749.js" crossorigin="anonymous"></script>
-        
-      
+                <footer class="footer mt-auto footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 small">Copyright © INSCAMI DE MAR 2021</div>
+                            <div class="col-md-6 text-md-right small">
+                                <a href="#!">Privacy Policy</a>
+                                ·
+                                <a href="#!">Terms &amp; Conditions</a>
+                                <a class="btn btn-info fab fa-twitter" href="http://twitter.com/home?status=https://pagaments.inscamidemar.cat/pagament/ESO/210">Twitter</a>
+                                <a class="btn btn-primary fab fa-facebook-f" href="http://facebook.com/sharer.php?u=https://pagaments.inscamidemar.cat/pagament/ESO/210"> Facebook</a>
+                                <a class="btn btn-success fab fa-whatsapp" href="https://api.whatsapp.com/send?text=Mira los pagos activos de https://pagaments.inscamidemar.cat/pagament/ESO/210"> WhatsApp</a>
+                                <a class="btn btn-primary fab fa-telegram-plane" href="tg:msg_url?url=https://pagaments.inscamidemar.cat/pagament/ESO/210&amp;text=Pagaments de l'Ins Camí de Mar"> Telegram</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>      
 </body>
 
 </html>

@@ -1,7 +1,17 @@
-#logo {
-	background-repeat: no-repeat;
+#iconoGog{
+    width: 348.525px;
+    height: 78px;
+    margin-bottom: 1em;
 }
 
-.fotoLogo {
-	background-repeat: no-repeat;
+.text-center {
+        text-align: center;
+    }
+
+    .g-recaptcha {
+        display: inline-block;
+    }
+
+#botonEnviar{
+	margin-right: 13em;
 }

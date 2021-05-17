@@ -5,10 +5,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" media="screen" />
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-<style>
-h2{text-align: center;
-font-size: 1em;}
-</style>
+
 
 <div id="contingut" class="p-3 px-5">
    <h1 class="text-center">{{ $finRuta->titol }}</h2>
@@ -34,6 +31,7 @@ font-size: 1em;}
           <input type="hidden" name="Ds_Signature" value="b0pqVRH15AYyMlk/e9XKa21pNMtayYvwZTlrxkw880w=">
       </form>
       <br>
+
       Compartir contingut: 
       <a class="btn btn-social-icon btn-twitter">      
             <a href="https://twitter.com/intent/tweet?text=Pagament%20{{$finRuta->titol}}:&url=http://proyectofinaldk.com/pagos/{{$finRuta->id}}">  <span class="fa fa-twitter">   </span>  </a>
