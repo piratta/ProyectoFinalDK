@@ -11,7 +11,7 @@
       </div>
       <div class="modal-body" >
      
-        <form method="post" action="/modifyPag">
+        <form method="post" action="/modifyPagos">
         @csrf 
         {{ method_field('POST') }}
         <input type="hidden" id="id_editar" name="id_edit" />
@@ -19,11 +19,23 @@
         Titol<br>
         <input Type="text" name="modTitol" class="modTitol" id="modTitol" value="" required></input><br>
 
-        
-
         Descripció<br>
-        <textarea  name="modDes" class="modDes" id="modDes" value="" required></textarea><br>
+        <textarea  name="modDes" class="modDes" id="modDes" value="" ></textarea><br>
 
+        Data inici:<br>
+
+        <input name="modInici" id="modInici" type="date" /><br>
+        Data fi:<br>
+
+        <input name="modFi" id="modFi"  type="date" /><br>
+        Preu:<br>
+        <input type="number" id="modPreu" name="modPreu" min="0"/>
+        <br>
+        Estat<br>
+        <select id="modStat" name="modStat" name="modStat">
+            <option value="actiu">Actiu</option>
+            <option value="inactiu">Inactiu</option>
+        </select>
        
         
       </div>

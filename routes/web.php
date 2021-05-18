@@ -26,15 +26,19 @@ route::get('/pagos/{id}', 'pagosControllers@pagos');
 route::get('/llogerTaquilles', 'pagosControllers@taquilla');
 route::get('/reciclaje', 'pagosControllers@reciclaje');
 route::get('/reciclajeAyuntamiento', 'pagosControllers@reciclajeAyuntamiento');
+
 route::post('/borrarPago', 'borrarControllers@borrarPagament');
 route::post('/borrarUser', 'borrarControllers@borrarUsuarios');
 route::post('/borrarCat', 'borrarControllers@borrarCat');
+
 route::post('/afegirCat', 'afegir@addCategoria');
 route::post('/afegirConta', 'afegir@addConta');
 route::post('/afegirPagament' , 'afegir@addPagos');
 route::post('/afegirUser', 'afegir@addUser');
-route::post('/editarUser', 'edit@editUser');
+
 route::post('/modifyCat', 'modify@modifyCat');
+route::post('/modifyPagos', 'modify@modifyPagos');
+
 
 
 Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle');

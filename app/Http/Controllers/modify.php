@@ -18,19 +18,15 @@ class modify extends Controller
 {
     public function modifyCat(Request $request){
 
-<<<<<<< HEAD
         $id = $request-> id_edit;
         //dd($id);
-=======
-    $id = $request -> id_edit;
->>>>>>> ed3df08be16353df50a6d14f6f0fa50a63a45a2f
  
     $edita = Auth::User()->id;
     $hora = Carbon::now()->toDateTimeString();
     $nCat = $request ->modCate;
 
    
-         $updateCat = DB::select('select Categoria from categorias where id='. $id);
+         //s$updateCat = DB::select('select Categoria from categorias where id='. $id);
          $updateCat = DB::update('update categorias set updated_at = "'.$hora.'" where id ='. $id);
          $updateCat = DB::update('update categorias set Categoria = "'.$nCat.'" where id ='. $id);
          $updateCat = DB::update('update categorias set update_by = "'.$edita.'" where id ='. $id);
@@ -45,13 +41,32 @@ class modify extends Controller
  
     $edita = Auth::User()->id;
     $hora = Carbon::now()->toDateTimeString();
-    $nCat = $request ->modPag;
+    $titol= $request-> modTitol;
+    $descr= $request -> modDes;
+    $dataI = $request -> modInici;
+    $dataF = $request -> modFi;
+    $preu = $request -> modPreu;
+    $estat = $request -> modStat;
+
 
    
-         $updateCat = DB::select('select Categoria from categorias where id='. $id);
-         $updateCat = DB::update('update categorias set updated_at = "'.$hora.'" where id ='. $id);
-         $updateCat = DB::update('update categorias set Categoria = "'.$nCat.'" where id ='. $id);
-         $updateCat = DB::update('update categorias set update_by = "'.$edita.'" where id ='. $id);
+         $updatePag = DB::update('update pagos set updated_at = "'.$hora.'" where id ='. $id);
+
+         $updatePag = DB::update('update pagos set titol = "'.$titol.'" where id ='. $id);
+
+         $updatePag = DB::update('update pagos set descipcio = "'.$descr.'" where id ='. $id);
+
+         $updatePag = DB::update('update pagos set data_inici = "'.$dataI.'" where id ='. $id);
+
+         $updatePag = DB::update('update pagos set data_fi = "'.$dataF.'" where id ='. $id);
+
+         $updatePag = DB::update('update pagos set preu = "'.$preu.'" where id ='. $id);
+
+         $updatePag = DB::update('update pagos set estat = "'.$estat.'" where id ='. $id);
+
+         $updatePag = DB::update('update pagos set update_by = "'.$edita.'" where id ='. $id);
+         
+         return redirect('adminPagos');  
 
 
     }

@@ -49,6 +49,19 @@ $  (document).ready(function() {
             $valor1 =  $(this).closest("tr").find('td:nth-child(3)').html();
                 $("#modDes").html($valor1);
                 
+            $valor2 =  $(this).closest("tr").find('td:nth-child(4)').html();
+                $("#modInici").attr('value', $valor2);
+            
+            $valor3 =  $(this).closest("tr").find('td:nth-child(5)').html();
+                $("#modFi").attr('value', $valor3);  
+
+            $valor4 =  $(this).closest("tr").find('td:nth-child(6)').html();
+                $("#modPreu").attr('value', $valor4);
+            $valor5 =  $(this).closest("tr").find('td:nth-child(7)').html();
+                $("#modPreu").attr('value', $valor4);
+            
+           
+                
             
             $valor_id = $(this).attr('data-id');
                 $("#id_editar").attr('value', $valor_id);
