@@ -6,17 +6,12 @@
 
 
 <!-- mover a un css aparte-->
-<style>
-h2{text-align: center;}</style>
-
-</script>
-
 
 <!--
     panel de administración donde se gestionarán los usuarios.
     Creación con la función DataTable(), la tabla dinamica.
  -->
-   <h2>Panel de administración</h2>
+   <h2 class="text-center">Panel de administración</h2>
    
       <script>
       /*
