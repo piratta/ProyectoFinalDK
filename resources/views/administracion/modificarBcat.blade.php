@@ -14,7 +14,7 @@
         <form method="post" action="/modifyCat">
         @csrf 
         {{ method_field('POST') }}
-        <input type="hidden" id="id_editar" name="id_edit" value="<?=  $cats -> id  ?>"/>
+        <input type="hidden" id="id_editar" name="id_edit" />
 
        Categoria<br>
         <input Type="text" name="modCate" class="modCate" id="modCate" value="" required></input><br>

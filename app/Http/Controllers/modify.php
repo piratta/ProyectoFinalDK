@@ -18,8 +18,12 @@ class modify extends Controller
 {
     public function modifyCat(Request $request){
 
+<<<<<<< HEAD
         $id = $request-> id_edit;
         //dd($id);
+=======
+    $id = $request -> id_edit;
+>>>>>>> ed3df08be16353df50a6d14f6f0fa50a63a45a2f
  
     $edita = Auth::User()->id;
     $hora = Carbon::now()->toDateTimeString();
