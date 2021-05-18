@@ -41,9 +41,26 @@ $(document).ready(function() {
             'copy', 'excel', 'pdf'
         ]
     } );
+    $('.bEdit').click(function (){
 
+        $valor =  $(this).closest("tr").find('td:nth-child(1)').html();
+            $("#modName").attr('value', $valor);  
+
+        $valor1 =  $(this).closest("tr").find('td:nth-child(2)').html();
+            $("#modEmail").attr('value', $valor1);
+
+        $valor2 =  $(this).closest("tr").find('td:nth-child(3)').html();
+            $("#modAdmin").attr('value', $valor2);
+
+         $valor_id = $(this).attr('data-id');
+            $("#id_editar").attr('value', $valor_id);
+
+    
+});
+    $("#staticBackdrop").prependTo("body");
+    $("#modify").prependTo("body");
    } );
-   $("#staticBackdrop").prependTo("body");
+  
 
 
 </script>
@@ -77,11 +94,11 @@ $(document).ready(function() {
                 <th> 
                     <div  class="margin-l-15 checkbox checkboxStyle-table checkColorGreenLight">
                     @if ($datos ->  admin == 1)
-                        <input type="hidden" class="tableid" name="tableid" id="tableid" class="click" checked disabled>
+                        <input type="hidden" class="tableid" value="1" name="tableid" id="tableid" class="click" checked disabled>
                         <label class="s18 text-normal">Si</label>
                     
                     @else
-                        <input type="hidden" class="tableid" name="tableid" id="tableid" class="click" disabled>
+                        <input type="hidden" class="tableid" value="0" name="tableid" id="tableid" class="click" disabled>
                         <label class="s18 text-normal">No</label>
                     
                     @endif
@@ -103,12 +120,16 @@ $(document).ready(function() {
         
                     </form>
                     
-                  
+                    <form  method="post" action="editar" >
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                    </svg>
-                    
+                            <button class="bEdit" data-id="{{  $datos -> id  }}" type="button" data-toggle="modal" data-target="#modify">
+                                <input type="hidden" id="{{  $datos -> id  }}" name="id_mod" value="{{  $datos -> id  }}"/>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                                    </svg>
+                            </button>    
+                    </form>
 
                     
                 </td>  
@@ -123,13 +144,15 @@ $(document).ready(function() {
 
         </tfoot>
     </table>
-    @if(Auth::user() -> admin == 1)
+    
 
     @include('administracion.insertarU')
+    @include('administracion.modificarU')
+
 
   
 
-   @endif
+  
 
 
 @endsection

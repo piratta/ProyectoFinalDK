@@ -20,8 +20,8 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        $country_list = CovidRepository::countryList();
-        return view('auth.register', compact('country_list'));
+       
+        return view('auth.register');
     }
 
     /**

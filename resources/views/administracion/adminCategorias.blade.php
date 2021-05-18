@@ -70,7 +70,6 @@ $(document).ready(function() {
 
         @foreach ($categ as $cats)    
             
-
             <tr>
                
                 <td class="categoria">{{ $cats -> Categoria}}</td>

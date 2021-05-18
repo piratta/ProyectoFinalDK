@@ -44,6 +44,8 @@ class adminController extends Controller
 
     public function getPay(){
         if(Auth::user()){
+        
+
         return view('administracion.adminPagos');
     }else return view('home');
 
@@ -59,10 +61,11 @@ class adminController extends Controller
 
 
 
-    public function getCategorias(){
+    public function getCategorias(Request $request){
         if(Auth::user() ){ 
 
-            $users = user::all();      
+            $users = user::all();    
+           
                
         return view('administracion.adminCategorias',['queryUsuario' => $users]);
         

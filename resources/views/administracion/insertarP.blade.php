@@ -18,7 +18,7 @@ Afegir pagament</button>
         @csrf 
         {{ method_field('POST') }}
 
-        Nivell<br>
+        Categoria<br>
         <select  name="nCategoria">
         @foreach ($categ as $categoria)
         
