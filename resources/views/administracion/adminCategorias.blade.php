@@ -33,14 +33,15 @@ $(document).ready(function() {
     } );
 
     $('.bEdit').click(function (){
-
             $valor =  $(this).closest("tr").find('td:nth-child(1)').html();
             $("#modCate").attr('value', $valor);
             
-            $valor_id = $('input[name=id_mod]').attr("value");
-            console.log($valor_id);
+            //escoger valor para modificar
+            $valor_id =$(this).attr("data-id");
             $("#id_editar").attr('value', $valor_id);
-});
+    });
+
+
   /*
   * Se mueve al fuera del body para que pueda ser funcional.
   */
@@ -89,7 +90,7 @@ $(document).ready(function() {
                 
                 <form  method="post" action="editar" >
 
-                    <button class="bEdit" type="button" data-toggle="modal" data-target="#modify">
+                    <button class="bEdit" type="button" data-id="{{  $cats -> id  }}" data-toggle="modal" data-target="#modify">
                     <input type="hidden" id="<?=  $cats -> id  ?>" name="id_mod" value="{{  $cats -> id  }}"/>
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">

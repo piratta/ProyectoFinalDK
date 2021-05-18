@@ -8,17 +8,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
-
-
-<style>
-
-h2{text-align: center;
-font-size: 1em;}
-
-</style>
-
-
-   <h2>Panel de administració</h2>
+   <h2 class="text-center">Panel de administració</h2>
    <br>
 
    <div class="row " >

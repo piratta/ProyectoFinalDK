@@ -15,3 +15,15 @@
 #botonEnviar{
 	margin-right: 13em;
 }
+
+
+#miFooter{
+    position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: rgb(31, 31, 31);
+   text-align: center;
+}
+
