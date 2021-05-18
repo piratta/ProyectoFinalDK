@@ -82,9 +82,10 @@
                                     document.getElementById('logout-form').submit();">
                             {{ __('Tanca sesió') }}
                         </a>
-                        @if(Auth::user()-> admin == 1 )
+
+                        @if(Auth::user()-> admin == 1)
                         <a class="dropdown-item" href="/admin">
-                            {{ __('Gestion') }}
+                            {{ __('Gestio') }}
                         </a>
                         @endif
                         

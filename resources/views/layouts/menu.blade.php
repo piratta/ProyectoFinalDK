@@ -74,8 +74,9 @@
                                 <a href="/admin">
                                     ADMINISTACIÓ
                                 </a>
-                              
+                                @if(Auth::user()-> admin == 1 )
                                 <ul> <a href="{{route('adminUsuarios')}}">Usuarios</a></ul>
+                               @endif
                                
                                 <ul> <a href="{{route('adminPagos')}}">Pagos</a></ul>
                                 <ul> <a href="{{route('adminCategorias')}}">Categorias</a></ul>
