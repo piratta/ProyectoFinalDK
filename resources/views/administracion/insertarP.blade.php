@@ -31,7 +31,7 @@ Afegir pagament</button>
         Descripció<br>
         <textarea class="nDescrp" name="nDescrp" id="nDescrp"></textarea>
 <script>
-    tinymce.init({
+      tinymce.init({
         selector:'textarea.nDescrp',
         width: 470,
         height: 300
