@@ -18,18 +18,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
-<!-- mover a un css aparte-->
-<style>
-h2{text-align: center;}
-</style>
-
 
 
 <!--
     panel de administración donde se gestionarán los usuarios.
     Creación con la función DataTable(), la tabla dinamica.
  -->
-   <h2>Panel de administración</h2>
+   <h2 class="text-center">Panel de administración</h2>
    
       <script>
       /*
@@ -55,7 +50,7 @@ $(document).ready(function() {
 
 <a href="/admin">administació</a>-><a href="adminUsuarios"><b>Usuaris</b></a>
 
-<table id="tablaDatos" class="display" style="width:100%">
+<table id="tablaDatos" class="display">
         <thead>
         
             <tr>
