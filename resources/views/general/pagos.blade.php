@@ -22,7 +22,7 @@
       <b>Heu d'enviar el comprovant bancari mitjançant l'adreça electrònica del centre (<a href="mailto:e3007257@xtec.cat">e3007257@xtec.cat</a>), juntament&nbsp;amb la resta de documentació&nbsp;requerida per a formalitzar la matrícula del proper curs. MOLT IMPORTANT: Anoteu el nom i cognoms de l'alumne/a a l'apartat&nbsp;<i>assumpte&nbsp;</i>del correu electrònic.</b></p>
    
    <p>Salutacions i moltes gràcies</p>
-
+      <!--FORMULARIO PARA BANCO -->
       <a class="button-style" href="javascript: void(0)" onclick="document.getElementById('form_210').submit();">Fer el pagament</a>
       <form action="https://sis.redsys.es/sis/realizarPago" method="post" accept-charset="utf-8" id="form_210">
           <input type="hidden" name="Ds_SignatureVersion" value="HMAC_SHA256_V1">
@@ -30,7 +30,9 @@
           <input type="hidden" name="Ds_Signature" value="b0pqVRH15AYyMlk/e9XKa21pNMtayYvwZTlrxkw880w=">
       </form>
       <br>
+      <!--FIN DE FORMULARIO PARA BANCO -->
 
+      <!--COMPARTIR EN REDES -->
       Compartir contingut: 
       <a class="btn btn-social-icon btn-twitter">      
             <a href="https://twitter.com/intent/tweet?text=Pagament%20{{$finRuta->titol}}:&url=http://proyectofinaldk.com/pagos/{{$finRuta->id}}">  <span class="fa fa-twitter">   </span>  </a>
@@ -44,7 +46,8 @@
       <a class="btn btn-social-icon btn-twitter">      
             <a href="https://api.whatsapp.com/send?text=Pagament%20{{$finRuta->titol}}:%20http://proyectofinaldk.com/pagos/{{$finRuta->id}}">  <span class="fa fa-whatsapp">   </span>  </a>
       </a>
-  
+      <!-- FIN COMPARTIR EN REDES SOCIALES -->
+
 </div>
 
 @endsection

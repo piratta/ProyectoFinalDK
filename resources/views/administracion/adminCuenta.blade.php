@@ -13,35 +13,31 @@
  -->
    <h2 class="text-center">Panel de administración</h2>
    
-      <script>
+<script>
       /*
       *Creación de la datatable
       *la etiqueta dom añade a la tabla la información que queramos.
       *
       */
-$(document).ready(function() {
-    $('#tablaDatos').DataTable( {
-        dom: 'Bfrtlip',
-        buttons: [
-            'copy', 'excel', 'pdf'
-        ]
-    } );
+      $(document).ready(function () {
+  $('#tablaDatos').DataTable({
+    dom: 'Bfrtlip',
+    buttons: [
+      'copy', 'excel', 'pdf'
+    ]
+  });
 
-    $('.bEdit').click(function (){
+  $('.bEdit').click(function () {
 
-            $valor =  $(this).closest("tr").find('td:nth-child(2)').html();
-            $("#modCate").attr('value', $valor);
- 
+    $valor = $(this).closest("tr").find('td:nth-child(2)').html();
+    $("#modCate").attr('value', $valor);
+
+  });
+
+  $("#staticBackdrop").prependTo("body");
+  $("#modify").prependTo("body");
 });
- 
-    $("#staticBackdrop").prependTo("body");
-    $("#modify").prependTo("body");
-   
-       
 
-   } );
-
-  
 </script>
 
 <a href="/admin">Administació</a>-><a href="adminCuenta"><b>Contes</b></a>
