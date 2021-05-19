@@ -39,12 +39,10 @@ class afegir extends Controller
 
 
     public function addUser(Request $request){
+        
         $request->validate([
             'nUser' => 'required|String|min:0|max:255',
-            'cUser' => 'required|email|min:0|max:255',
-            'cPw' => 'required|password|min:0|max:255',
-
-
+            'cUser' => 'required|email|unique:users,email',
             
         ]);
 
