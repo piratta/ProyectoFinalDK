@@ -10,7 +10,9 @@
 h2{text-align: center;}</style>
 
 </script>
-
+@error('categori') 
+{{$message}}
+@enderror
 
 <!--
     panel de administración donde se gestionarán los usuarios.

@@ -18,15 +18,21 @@ class modify extends Controller
 {
     public function modifyCat(Request $request){
 
-        $id = $request-> id_edit;
-        //dd($id);
+
+        $request->validate([
+            
+            'modCate' => 'required|String|min:0|max:150',
+                       
+        ]);
+
+
+    $id = $request-> id_edit;  
  
     $edita = Auth::User()->id;
     $hora = Carbon::now()->toDateTimeString();
     $nCat = $request ->modCate;
 
    
-         //$updateCat = DB::select('select Categoria from categorias where id='. $id);
          $updateCat = DB::update('update categorias set updated_at = "'.$hora.'" where id ='. $id);
 
          $updateCat = DB::update('update categorias set Categoria = "'.$nCat.'" where id ='. $id);
@@ -38,6 +44,17 @@ class modify extends Controller
     }
 
     public function modifyPagos(Request $request){
+
+
+        $request->validate([
+            'modPreu' => 'required|Integer|min:0',
+            'modDes' => 'required|String|min:0|max:150',
+            'modTitol' => 'required|String|min:0|max:150',
+            'modInici' => 'required|date',
+            'modFi' => 'required|date',
+
+           
+        ]);
 
 
     $id = $request -> id_edit;
@@ -78,6 +95,13 @@ class modify extends Controller
 
     public function modifyUser(Request $request){
 
+        $request->validate([
+            'modName' => 'required|String|min:0|max:255',
+            'modEmail' => 'required|email|min:0|max:255',
+            
+        ]);
+
+
     $id = $request -> id_edit;
     $edita = Auth::User()->id;
     $hora = Carbon::now()->toDateTimeString();
@@ -104,6 +128,12 @@ class modify extends Controller
     }
 
     public function modifyAccs(Request $request){
+        $request->validate([
+            'modNum' => 'required|String|min:0',
+            'modFuc' => 'required|String|min:0',
+
+                      
+        ]);
 
     $id = $request -> id_edit;
     $edita = Auth::User()->id;

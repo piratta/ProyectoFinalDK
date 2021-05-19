@@ -12,6 +12,10 @@
     Creación con la función DataTable(), la tabla dinamica.
  -->
    <h2 class="text-center">Panel de administración</h2>
+   @foreach ($errors->all() as $error)
+    {{ $error }}<br/>
+@endforeach
+
    
 <script>
       /*

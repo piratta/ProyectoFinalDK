@@ -16,6 +16,10 @@ use App\cuentas;
 class afegir extends Controller
 {
     public function addCategoria(Request $request){
+        $request->validate([
+            'categori' => 'required|String|min:0|max:150',
+            //...
+        ]);
 
         $categoria = new categorias();
     
@@ -23,6 +27,8 @@ class afegir extends Controller
         $categoria->Categoria=$request->categori;
         $categoria->update_by=Auth::User()->id;
         $categoria->created_by=Auth::User()->id;
+
+        
 
 
         $categoria->save();
@@ -33,6 +39,14 @@ class afegir extends Controller
 
 
     public function addUser(Request $request){
+        $request->validate([
+            'nUser' => 'required|String|min:0|max:255',
+            'cUser' => 'required|email|min:0|max:255',
+            'cPw' => 'required|password|min:0|max:255',
+
+
+            
+        ]);
 
         $usuari = new User();
     
@@ -51,6 +65,16 @@ class afegir extends Controller
 
     }
     public function addPagos(Request $request){
+
+        $request->validate([
+            'nPreu' => 'required|Integer|min:0',
+            'nDescrp' => 'required|String|min:0|max:150',
+            'nTitol' => 'required|String|min:0|max:150',
+            'data_inici' => 'required|date',
+            'data_fi' => 'required|date',
+
+           
+        ]);
 
        
         $pagos = new pagos();
@@ -74,11 +98,21 @@ class afegir extends Controller
         $pagos->data_inici=$request->nInici;
         $pagos->data_fi=$request->nFi;
         $pagos->save();
+
+
         return redirect('adminPagos');
 
     }
 
     public function addConta(Request $request){
+
+        $request->validate([
+            'nConta' => 'required|String|min:0',
+            'fuc' => 'required|String|min:0',
+
+                      
+        ]);
+
 
         $cuentas = new cuentas();
     

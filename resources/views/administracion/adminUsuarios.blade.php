@@ -19,6 +19,11 @@
 <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
 
+@foreach ($errors->all() as $error)
+    {{ $error }}<br/>
+@endforeach
+
+
 
 <!--
     panel de administración donde se gestionarán los usuarios.
