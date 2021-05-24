@@ -68,8 +68,8 @@ class afegir extends Controller
             'nPreu' => 'required|Integer|min:0',
             'nDescrp' => 'required|String|min:0|max:150',
             'nTitol' => 'required|String|min:0|max:150',
-            'data_inici' => 'required|date',
-            'data_fi' => 'required|date',
+            'nFi' => 'required|date',
+            'nInici' => 'required|date',
 
            
         ]);

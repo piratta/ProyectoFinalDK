@@ -27,21 +27,25 @@ h2{text-align: center;}</style>
       *
       */
 $(document).ready(function() {
-    $('.borrar').click(function compro(){
-
-if(confirm("Estas seguro de que quieres eliminar?")){
-    $(this).find("form").submit();
     
-    
-};
-});
+    $('#tablaDatos').DataTable({
+    dom: 'Bfrtlip',
+    buttons: [
+      'copy', 'excel', 'pdf'
+    ]
+  });
 
-    $('#tablaDatos').DataTable( {
-        dom: 'Bfrtlip',
-        buttons: [
-            'copy', 'excel', 'pdf'
-        ]
-    } );
+      $('.borrar').click(function compro(){
+
+        if(confirm("Estas seguro de que quieres eliminar?")){
+            $(this).find("form").submit();
+            
+            
+        };
+    });
+
+
+
 
     $('.bEdit').click(function (){
             $valor =  $(this).closest("tr").find('td:nth-child(1)').html();
@@ -50,6 +54,7 @@ if(confirm("Estas seguro de que quieres eliminar?")){
             //escoger valor para modificar
             $valor_id =$(this).attr("data-id");
             $("#id_editar").attr('value', $valor_id);
+            
     });
 
 

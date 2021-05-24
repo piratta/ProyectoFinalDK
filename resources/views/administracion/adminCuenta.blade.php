@@ -5,16 +5,10 @@
 @section('content')
 
 
-<!-- mover a un css aparte-->
-
-<!--
-    panel de administración donde se gestionarán los usuarios.
-    Creación con la función DataTable(), la tabla dinamica.
- -->
    <h2 class="text-center">Panel de administración</h2>
    @foreach ($errors->all() as $error)
     {{ $error }}<br/>
-@endforeach
+  @endforeach
 
    
 <script>
@@ -23,23 +17,24 @@
       *la etiqueta dom añade a la tabla la información que queramos.
       *
       */
-      $(document).ready(function () {
+    $(document).ready(function () {
 
         $('.borrar').click(function compro(){
 
-if(confirm("Estas seguro de que quieres eliminar?")){
-    $(this).find("form").submit();
-    
-    
-};
-});
+        if(confirm("Estas seguro de que quieres eliminar?")){
+            $(this).find("form").submit();
+       
+       };
+    });
 
   $('#tablaDatos').DataTable({
     dom: 'Bfrtlip',
     buttons: [
-      'copy', 'excel', 'pdf'
+      'copy', 'excel', 'PDF',
     ]
   });
+
+
   $('.bEdit').click(function (){
 
           $valor =  $(this).closest("tr").find('td:nth-child(1)').html();
@@ -49,14 +44,14 @@ if(confirm("Estas seguro de que quieres eliminar?")){
                 $("#modFuc").html($valor1);
 
           $valor_id = $(this).attr('data-id');
-              $("#id_editar").attr('value', $valor_id);
-
-    
+              $("#id_editar").attr('value', $valor_id);   
 });
 
 
   $("#staticBackdrop").prependTo("body");
   $("#modify").prependTo("body");
+
+
 });
 
 </script>
