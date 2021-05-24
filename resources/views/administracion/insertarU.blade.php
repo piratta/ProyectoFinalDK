@@ -21,10 +21,10 @@ Afegir usuari</button>
         Nom del usuari<br>
         <input Type="text" name="nUser" id="nUser" placeholder="Nom Usuari" required></input><br>
         Correo electronic<br>
-        <input Type="text" name="cUser" id="cUser" placeholder="Correo electronic" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required></input><br>
-        Contraseña per defecte<br>
-        <input Type="text" name="cPw" id="cPw" placeholder="Contrasenya" required></input><br>
-        administrador?<br>
+        <input Type="text" name="cUser" id="cUser" placeholder="Correo electronic" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required></input><br><br>
+        <p><b>Recordar al usuari restableixer la contrasenya</b></p>
+
+        administrador?
         <input type="hidden" name="cAdmin" value="0" />
         <input Type="checkbox" name="cAdmin" id="cAdmin" value='1'></input><br>
            
