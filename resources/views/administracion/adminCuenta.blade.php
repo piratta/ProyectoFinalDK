@@ -18,6 +18,12 @@
       *
       */
     $(document).ready(function () {
+      $('#tablaDatos').DataTable({
+    dom: 'Bfrtlip',
+    buttons: [
+      'copy', 'excel', 'pdf'
+    ]
+  });
 
         $('.borrar').click(function compro(){
 
@@ -27,12 +33,7 @@
        };
     });
 
-  $('#tablaDatos').DataTable({
-    dom: 'Bfrtlip',
-    buttons: [
-      'copy', 'excel', 'PDF',
-    ]
-  });
+    
 
 
   $('.bEdit').click(function (){
